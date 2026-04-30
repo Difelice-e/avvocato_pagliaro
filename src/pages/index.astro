@@ -45,7 +45,7 @@ const jsonLd = JSON.stringify({
         <div class="lg:col-span-7 z-10">
           <span class="hero-anim-1 text-tertiary-fixed-dim font-label text-sm uppercase tracking-[0.3em] mb-6 block">Diritto del Lavoro &amp; Previdenza Sociale</span>
           <h1 class="hero-anim-2 font-serif text-primary leading-[1.1] tracking-tight mb-8 text-6xl lg:text-8xl">
-            Il tuo diritto è <br /> <span class="italic text-on-primary-container">la mia professione.</span>
+            Il tuo diritto è <br /> <span class="italic text-tertiary-fixed-dim">la mia professione.</span>
           </h1>
           <p class="hero-anim-3 text-on-surface-variant text-xl max-w-xl mb-12 leading-relaxed">
             Un approccio umano e preciso alla tutela dei lavoratori. Proteggiamo i vostri diritti con rigore giuridico e attenzione alle persone, a Chieti e a Roma.
@@ -71,10 +71,10 @@ const jsonLd = JSON.stringify({
           <div class="absolute inset-0 bg-primary-container/5 rounded-sm overflow-hidden transform translate-x-4 translate-y-4"></div>
           <img
             alt="Avv. Emanuele Pagliaro — Studio Legale Pagliaro"
-            class="absolute inset-0 w-full h-full object-cover rounded-sm grayscale shadow-2xl"
+            class="absolute inset-0 w-full h-full object-cover rounded-sm grayscale"
             src={`${base}/imgs/ema_pagliaro.jpg`}
           />
-          <div class="absolute -bottom-8 -left-8 bg-surface-container-lowest p-8 shadow-2xl max-w-xs border-l-4 border-tertiary-fixed-dim hidden lg:block">
+          <div class="absolute -bottom-8 -left-8 bg-surface-container-lowest p-8 shadow-2xl max-w-xs border-l-4 border-tertiary-fixed-dim rounded-sm hidden lg:block">
             <p class="font-serif italic text-primary text-xl">"La giustizia non è un privilegio, ma un diritto di ogni lavoratore."</p>
           </div>
         </div>
@@ -94,19 +94,18 @@ const jsonLd = JSON.stringify({
           </p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="reveal reveal-delay-1 bento-card md:col-span-2 group relative overflow-hidden bg-surface-container-lowest p-12 h-96 flex flex-col justify-end cursor-default">
-            <span class="material-symbols-outlined text-4xl text-tertiary-fixed-dim mb-4">work</span>
-            <h3 class="font-serif text-3xl text-primary mb-4">Diritto del Lavoro</h3>
-            <p class="text-on-surface-variant max-w-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-              Tutela del lavoratore in ogni fase del rapporto di lavoro: licenziamenti, demansionamento, mobbing, discriminazioni e risarcimenti.
-            </p>
+          <div class="reveal reveal-delay-1 bento-card md:col-span-2 group relative overflow-hidden bg-surface-container-lowest p-12 h-96 flex flex-col justify-between cursor-default">
+            <span class="material-symbols-outlined text-4xl text-tertiary-fixed-dim">work</span>
+            <div>
+              <h3 class="font-serif text-4xl text-primary mb-4">Diritto del Lavoro</h3>
+              <p class="text-on-surface-variant max-w-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                Tutela del lavoratore in ogni fase del rapporto di lavoro: licenziamenti, demansionamento, mobbing, discriminazioni e risarcimenti.
+              </p>
+            </div>
             <div class="absolute top-0 right-0 p-8 text-on-surface-variant/10 text-9xl font-serif">01</div>
           </div>
           <div class="reveal reveal-delay-2 bento-card group relative overflow-hidden bg-primary text-on-primary p-12 h-96 flex flex-col justify-between cursor-default">
-            <div class="flex justify-between items-start">
-              <span class="material-symbols-outlined text-4xl text-tertiary-fixed-dim">account_balance</span>
-              <span class="text-sm uppercase tracking-widest opacity-50">Previdenza</span>
-            </div>
+            <span class="material-symbols-outlined text-4xl text-tertiary-fixed-dim">account_balance</span>
             <div>
               <h3 class="font-serif text-3xl mb-4">Previdenza Sociale</h3>
               <p class="text-on-primary-container text-sm leading-relaxed">
@@ -115,11 +114,11 @@ const jsonLd = JSON.stringify({
             </div>
           </div>
           <div class="reveal reveal-delay-2 bento-card group relative overflow-hidden bg-surface-container-highest p-12 h-96 flex flex-col justify-between cursor-default">
+            <span class="material-symbols-outlined text-4xl text-primary relative z-10">domain</span>
             <div class="relative z-10">
               <h3 class="font-serif text-3xl text-primary mb-4">Pubblico Impiego</h3>
               <p class="text-on-surface-variant text-sm">Controversie con enti pubblici, concorsi, progressioni di carriera e disciplinari.</p>
             </div>
-            <span class="material-symbols-outlined text-4xl text-primary relative z-10">domain</span>
           </div>
           <div class="reveal reveal-delay-3 bento-card md:col-span-2 group relative overflow-hidden bg-surface-container-lowest p-12 h-96 flex items-center justify-between border-l-4 border-tertiary-fixed-dim cursor-default">
             <div class="max-w-md">
@@ -133,7 +132,7 @@ const jsonLd = JSON.stringify({
                 <span class="material-symbols-outlined text-sm cta-arrow">arrow_forward</span>
               </a>
             </div>
-            <span class="material-symbols-outlined text-[120px] text-surface-container-high">verified</span>
+            <span class="material-symbols-outlined text-8xl text-surface-container-high">gavel</span>
           </div>
         </div>
       </div>
@@ -145,12 +144,12 @@ const jsonLd = JSON.stringify({
         <div class="reveal relative">
           <div class="aspect-[4/5] bg-surface-container overflow-hidden">
             <img
-              alt="Avv. Emanuele Pagliaro"
+              alt="Avv. G. Pagliaro — Studio Legale Pagliaro"
               class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
-              src={`${base}/imgs/ema_pagliaro.jpg`}
+              src={`${base}/imgs/gia_pagliaro.jpg`}
             />
           </div>
-          <div class="absolute -bottom-12 -right-12 bg-primary-container p-12 text-on-primary max-w-xs shadow-2xl hidden md:block">
+          <div class="absolute -bottom-8 -right-8 bg-primary-container p-12 text-on-primary max-w-xs shadow-2xl hidden md:block">
             <h4 class="font-serif text-2xl mb-2">Avv. Emanuele Pagliaro</h4>
             <p class="text-tertiary-fixed-dim text-sm uppercase tracking-widest mb-4">Avvocato Titolare</p>
             <p class="text-on-primary-container text-xs leading-relaxed italic">

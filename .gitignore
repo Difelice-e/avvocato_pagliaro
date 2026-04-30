@@ -2,6 +2,7 @@ CLAUDE.md
 .impeccable.md
 .audit.md
 .claude
+corrections/
 
 # Astro build output
 dist/

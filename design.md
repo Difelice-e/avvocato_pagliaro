@@ -72,8 +72,8 @@ The footer uses standard Tailwind slate: `bg-slate-900`, text `slate-400 / slate
 **Heading sizes (homepage reference):**
 - H1 hero: `text-6xl lg:text-8xl` — Newsreader, `leading-[1.1] tracking-tight`
 - H2 section: `text-5xl` — Newsreader
-- H3 card: `text-3xl` — Newsreader
-- Label overline: `text-xs uppercase tracking-[0.3em]` — Inter
+- H3 card: `text-3xl` — Newsreader, featured cards (col-span-2) use `text-4xl`
+- Label overline: `text-xs uppercase tracking-[0.3em] text-tertiary-fixed-dim` — Inter (amber, consistent across all pages)
 
 **Body:** `text-xl` for lead paragraphs, `text-lg` for standard body, `text-sm` for captions.
 
@@ -140,15 +140,17 @@ bg-primary py-32 relative overflow-hidden
 ```
 
 ### Bento Cards
-- Base: `relative overflow-hidden p-12 h-96 flex flex-col`
+- Base: `relative overflow-hidden p-12 h-96 flex flex-col justify-between`
 - `.bento-card` class: hover lifts `translateY(-3px)` with shadow
-- Wide card (col-span-2): accent left border `border-l-4 border-tertiary-fixed-dim`
+- Icon always at the **top** of each card; content at the bottom — consistent across all cards
+- Wide card (col-span-2): no left border on homepage bento; featured title uses `text-4xl`
 - Dark card: `bg-primary` with icon in `text-tertiary-fixed-dim`
 
 ### Images
 - All portrait photos: `grayscale` by default, `hover:grayscale-0 transition-all duration-700`
-- Hero portrait: `grayscale shadow-2xl`
+- Hero portrait: `grayscale` (no shadow — removed per design review)
 - Background images: `grayscale opacity-[0.05] mix-blend-luminosity`
+- Homepage "Chi Siamo" section uses `gia_pagliaro.jpg` (different from hero which uses `ema_pagliaro.jpg`)
 
 ### Footer
 `bg-slate-900`, 4-column grid, `py-16 px-8`, `border-t border-slate-800`.
@@ -184,7 +186,7 @@ IntersectionObserver triggers ease-out cubic counter from 0 to target over 1200m
 | Purpose | Value |
 |---------|-------|
 | Section vertical padding | `py-32` (8rem) |
-| Hero top padding (nav clearance) | `pt-24` (hero) / `pt-32` (inner pages) |
+| Hero top padding (nav clearance) | `pt-24` (homepage hero section) / `pt-32` (all inner pages) |
 | Card padding | `p-12` (large), `p-10` / `p-8` (medium) |
 | Container horizontal | `px-8` |
 | Section gap (grid) | `gap-12` standard, `gap-24` for two-column layouts |
