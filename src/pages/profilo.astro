@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 const jsonLd = JSON.stringify({
   '@context': 'https://schema.org',
@@ -175,7 +176,7 @@ const jsonLd = JSON.stringify({
         <h2 class="text-5xl font-headline italic text-primary mb-8">Pronti ad ascoltarvi.</h2>
         <p class="text-on-surface-variant mb-12 text-lg">Contattate lo studio per fissare un primo appuntamento e discutere la vostra situazione.</p>
         <a
-          href="/contatti"
+          href={`${base}/contatti`}
           class="inline-block border-b-2 border-tertiary-fixed-dim pb-2 text-primary font-label uppercase tracking-[0.3em] font-bold text-sm hover:text-tertiary-fixed-dim transition-colors"
         >
           Richiedi una Consulenza

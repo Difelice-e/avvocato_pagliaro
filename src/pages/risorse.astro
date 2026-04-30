@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 const jsonLd = JSON.stringify({
   '@context': 'https://schema.org',
@@ -136,7 +137,7 @@ const jsonLd = JSON.stringify({
           Le risorse istituzionali sono un punto di partenza. Per un&rsquo;analisi concreta della vostra situazione, lo Studio Legale Pagliaro è a vostra disposizione.
         </p>
         <a
-          href="/contatti"
+          href={`${base}/contatti`}
           class="group inline-flex items-center justify-center gap-3 bg-primary text-on-primary px-10 py-5 rounded-sm font-label text-sm uppercase tracking-widest hover:bg-primary/85 active:scale-[0.97] transition-all duration-200"
         >
           Richiedi una Consulenza

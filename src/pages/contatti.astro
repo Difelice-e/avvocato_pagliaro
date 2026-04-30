@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 const jsonLd = JSON.stringify({
   '@context': 'https://schema.org',
@@ -69,7 +70,7 @@ const jsonLd = JSON.stringify({
             <div class="flex items-start space-x-3 pt-2">
               <input class="rounded-none border-outline/30 text-primary focus:ring-primary mt-0.5 shrink-0" id="privacy" type="checkbox" />
               <label class="text-xs text-on-surface-variant leading-relaxed" for="privacy">
-                Accetto la <a href="/privacy-policy" class="underline decoration-tertiary-fixed-dim underline-offset-2">Privacy Policy</a> e il trattamento dei dati personali ai sensi del Regolamento UE 2016/679 (GDPR).
+                Accetto la <a href={`${base}/privacy-policy`} class="underline decoration-tertiary-fixed-dim underline-offset-2">Privacy Policy</a> e il trattamento dei dati personali ai sensi del Regolamento UE 2016/679 (GDPR).
               </label>
             </div>
             <button class="group flex items-center justify-between w-full md:w-auto md:min-w-[260px] bg-primary text-on-primary px-8 py-5 hover:bg-primary/85 active:scale-[0.97] transition-all duration-200" type="submit">

@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 const jsonLd = JSON.stringify({
   '@context': 'https://schema.org',
@@ -49,7 +50,7 @@ const jsonLd = JSON.stringify({
             </p>
           </div>
           <div class="relative z-10 flex items-center group/link">
-            <a class="text-on-primary font-label text-sm uppercase tracking-widest border-b border-tertiary-fixed-dim/30 pb-1 group-hover/link:border-tertiary-fixed-dim transition-all" href="/contatti">Prenota una Consulenza</a>
+            <a class="text-on-primary font-label text-sm uppercase tracking-widest border-b border-tertiary-fixed-dim/30 pb-1 group-hover/link:border-tertiary-fixed-dim transition-all" href={`${base}/contatti`}>Prenota una Consulenza</a>
           </div>
         </div>
         <div class="group bg-surface-container-low p-10 flex flex-col justify-between border-l-4 border-tertiary-fixed-dim transition-colors hover:bg-surface-container">
@@ -74,7 +75,7 @@ const jsonLd = JSON.stringify({
               Controversie con enti pubblici, concorsi e selezioni, progressioni economiche e di carriera, procedimenti disciplinari e mobbing nel lavoro pubblico.
             </p>
           </div>
-          <a class="inline-block mt-8 text-primary font-label text-xs uppercase tracking-widest underline decoration-tertiary-fixed-dim underline-offset-4" href="/contatti">Consulenza</a>
+          <a class="inline-block mt-8 text-primary font-label text-xs uppercase tracking-widest underline decoration-tertiary-fixed-dim underline-offset-4" href={`${base}/contatti`}>Consulenza</a>
         </div>
         <div class="group bg-primary-container p-10 flex flex-col justify-between">
           <div>
@@ -84,7 +85,7 @@ const jsonLd = JSON.stringify({
               Assistenza nelle vertenze sindacali collettive, contrattazione, tutela delle rappresentanze sindacali e conflitti collettivi di lavoro.
             </p>
           </div>
-          <a class="inline-block mt-8 text-on-primary font-label text-xs uppercase tracking-widest underline decoration-tertiary-fixed-dim underline-offset-4" href="/contatti">Consulenza</a>
+          <a class="inline-block mt-8 text-on-primary font-label text-xs uppercase tracking-widest underline decoration-tertiary-fixed-dim underline-offset-4" href={`${base}/contatti`}>Consulenza</a>
         </div>
         <div class="group bg-white p-10 flex flex-col justify-between shadow-sm border border-outline-variant/10">
           <div>
@@ -94,7 +95,7 @@ const jsonLd = JSON.stringify({
               Risarcimento danni per infortuni sul lavoro, malattie professionali, responsabilità del datore di lavoro e tutela dell&rsquo;integrità fisica del lavoratore.
             </p>
           </div>
-          <a class="inline-block mt-8 text-primary font-label text-xs uppercase tracking-widest underline decoration-tertiary-fixed-dim underline-offset-4" href="/contatti">Consulenza</a>
+          <a class="inline-block mt-8 text-primary font-label text-xs uppercase tracking-widest underline decoration-tertiary-fixed-dim underline-offset-4" href={`${base}/contatti`}>Consulenza</a>
         </div>
       </div>
     </section>
@@ -177,8 +178,8 @@ const jsonLd = JSON.stringify({
           Prenota una prima consultazione per discutere la tua situazione con l&rsquo;Avv. Pagliaro.
         </p>
         <div class="flex flex-col sm:flex-row justify-center gap-6">
-          <a href="/contatti" class="bg-primary text-on-primary px-10 py-5 rounded-sm font-label text-sm uppercase tracking-widest hover:bg-primary-container transition-all text-center">Contatta lo Studio</a>
-          <a href="/profilo" class="border border-primary text-primary px-10 py-5 rounded-sm font-label text-sm uppercase tracking-widest hover:bg-surface-container-low transition-all text-center">Chi Siamo</a>
+          <a href={`${base}/contatti`} class="bg-primary text-on-primary px-10 py-5 rounded-sm font-label text-sm uppercase tracking-widest hover:bg-primary-container transition-all text-center">Contatta lo Studio</a>
+          <a href={`${base}/profilo`} class="border border-primary text-primary px-10 py-5 rounded-sm font-label text-sm uppercase tracking-widest hover:bg-surface-container-low transition-all text-center">Chi Siamo</a>
         </div>
       </div>
     </section>
