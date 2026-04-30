@@ -44,31 +44,35 @@ const jsonLd = JSON.stringify({
         <div class="reveal lg:col-span-7">
           <h2 class="font-headline text-3xl text-primary mb-3">Scriveteci un Messaggio</h2>
           <p class="text-on-surface-variant text-sm mb-10 leading-relaxed">Vi risponderemo entro un giorno lavorativo. Tutti i dati sono trattati con la massima riservatezza.</p>
-          <form action="#" class="space-y-8">
+          <form action="https://formsubmit.co/info@avvocatopagliaro.it" method="POST" class="space-y-8">
+            <input type="hidden" name="_subject" value="Nuova richiesta di consulenza — Studio Legale Pagliaro" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_next" value="https://www.avvocatopagliaro.it/contatti" />
+            <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" />
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
                 <label class="block text-xs font-label uppercase tracking-widest text-on-surface-variant mb-2" for="nome">Nome Completo</label>
-                <input id="nome" class="w-full bg-transparent border-0 border-b border-outline/30 focus:ring-0 focus:border-primary transition-all duration-300 py-2 px-0 text-on-surface placeholder-on-surface-variant/40" placeholder="Mario Rossi" type="text" autocomplete="name" />
+                <input id="nome" name="nome" required class="w-full bg-transparent border-0 border-b border-outline/30 focus:ring-0 focus:border-primary transition-all duration-300 py-2 px-0 text-on-surface placeholder-on-surface-variant/40" placeholder="Mario Rossi" type="text" autocomplete="name" />
               </div>
               <div>
                 <label class="block text-xs font-label uppercase tracking-widest text-on-surface-variant mb-2" for="email">Indirizzo Email</label>
-                <input id="email" class="w-full bg-transparent border-0 border-b border-outline/30 focus:ring-0 focus:border-primary transition-all duration-300 py-2 px-0 text-on-surface placeholder-on-surface-variant/40" placeholder="mario@email.it" type="email" autocomplete="email" />
+                <input id="email" name="email" required class="w-full bg-transparent border-0 border-b border-outline/30 focus:ring-0 focus:border-primary transition-all duration-300 py-2 px-0 text-on-surface placeholder-on-surface-variant/40" placeholder="mario@email.it" type="email" autocomplete="email" />
               </div>
             </div>
             <div>
               <label class="block text-xs font-label uppercase tracking-widest text-on-surface-variant mb-2" for="telefono">Telefono <span class="normal-case tracking-normal opacity-60">(opzionale)</span></label>
-              <input id="telefono" class="w-full bg-transparent border-0 border-b border-outline/30 focus:ring-0 focus:border-primary transition-all duration-300 py-2 px-0 text-on-surface placeholder-on-surface-variant/40" placeholder="+39 333 000 0000" type="tel" autocomplete="tel" />
+              <input id="telefono" name="telefono" class="w-full bg-transparent border-0 border-b border-outline/30 focus:ring-0 focus:border-primary transition-all duration-300 py-2 px-0 text-on-surface placeholder-on-surface-variant/40" placeholder="+39 333 000 0000" type="tel" autocomplete="tel" />
             </div>
             <div>
               <label class="block text-xs font-label uppercase tracking-widest text-on-surface-variant mb-2" for="oggetto">Oggetto della Consulenza</label>
-              <input id="oggetto" class="w-full bg-transparent border-0 border-b border-outline/30 focus:ring-0 focus:border-primary transition-all duration-300 py-2 px-0 text-on-surface placeholder-on-surface-variant/40" placeholder="Licenziamento, Previdenza, Pubblico Impiego..." type="text" />
+              <input id="oggetto" name="oggetto" required class="w-full bg-transparent border-0 border-b border-outline/30 focus:ring-0 focus:border-primary transition-all duration-300 py-2 px-0 text-on-surface placeholder-on-surface-variant/40" placeholder="Licenziamento, Previdenza, Pubblico Impiego..." type="text" />
             </div>
             <div>
               <label class="block text-xs font-label uppercase tracking-widest text-on-surface-variant mb-2" for="messaggio">Messaggio</label>
-              <textarea id="messaggio" class="w-full bg-transparent border-0 border-b border-outline/30 focus:ring-0 focus:border-primary transition-all duration-300 py-2 px-0 text-on-surface placeholder-on-surface-variant/40 resize-none" placeholder="Descrivete brevemente la vostra situazione. Ogni informazione resterà riservata." rows="4"></textarea>
+              <textarea id="messaggio" name="messaggio" required class="w-full bg-transparent border-0 border-b border-outline/30 focus:ring-0 focus:border-primary transition-all duration-300 py-2 px-0 text-on-surface placeholder-on-surface-variant/40 resize-none" placeholder="Descrivete brevemente la vostra situazione. Ogni informazione resterà riservata." rows="4"></textarea>
             </div>
             <div class="flex items-start space-x-3 pt-2">
-              <input class="rounded-none border-outline/30 text-primary focus:ring-primary mt-0.5 shrink-0" id="privacy" type="checkbox" />
+              <input class="rounded-none border-outline/30 text-primary focus:ring-primary mt-0.5 shrink-0" id="privacy" name="privacy" required type="checkbox" value="accettata" />
               <label class="text-xs text-on-surface-variant leading-relaxed" for="privacy">
                 Accetto la <a href={`${base}/privacy-policy`} class="underline decoration-tertiary-fixed-dim underline-offset-2">Privacy Policy</a> e il trattamento dei dati personali ai sensi del Regolamento UE 2016/679 (GDPR).
               </label>
@@ -113,7 +117,7 @@ const jsonLd = JSON.stringify({
               </div>
             </div>
           </div>
-          <div class="bg-surface-container-low p-8 border-l-4 border-tertiary-fixed-dim">
+          <div class="bg-surface-container-low p-8 border-t-2 border-primary">
             <h3 class="font-headline text-xl text-primary mb-5">Come possiamo incontrarci</h3>
             <ul class="space-y-4 text-on-surface-variant text-sm">
               <li class="flex items-center gap-3">
@@ -134,42 +138,8 @@ const jsonLd = JSON.stringify({
       </div>
     </section>
 
-    <!-- Sedi — Immagini -->
-    <section class="max-w-7xl mx-auto px-8 mt-20">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-2 h-72">
-        <div class="relative overflow-hidden group cursor-default">
-          <img
-            src="https://images.unsplash.com/photo-1529260830199-42c24126f198?w=900&auto=format&fit=crop&q=80"
-            alt="Chieti — Sede dello Studio Legale Pagliaro"
-            class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100"
-          />
-          <div class="absolute inset-0 bg-primary/55 flex items-end p-8">
-            <div>
-              <p class="text-tertiary-fixed-dim text-xs font-label uppercase tracking-[0.25em] mb-1">Sede principale</p>
-              <p class="text-white font-headline text-4xl italic">Chieti</p>
-              <p class="text-white/60 font-label text-sm mt-1 uppercase tracking-widest">Corso Marrucino</p>
-            </div>
-          </div>
-        </div>
-        <div class="relative overflow-hidden group cursor-default">
-          <img
-            src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=900&auto=format&fit=crop&q=80"
-            alt="Roma — Sede dello Studio Legale Pagliaro"
-            class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100"
-          />
-          <div class="absolute inset-0 bg-primary/55 flex items-end p-8">
-            <div>
-              <p class="text-tertiary-fixed-dim text-xs font-label uppercase tracking-[0.25em] mb-1">Sede di Roma</p>
-              <p class="text-white font-headline text-4xl italic">Roma</p>
-              <p class="text-white/60 font-label text-sm mt-1 uppercase tracking-widest">Via del Corso</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Mappe Google -->
-    <section class="max-w-7xl mx-auto px-8 mt-2">
+    <section class="max-w-7xl mx-auto px-8 mt-20">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
         <div class="relative overflow-hidden h-80 bg-surface-container-highest">
           <iframe

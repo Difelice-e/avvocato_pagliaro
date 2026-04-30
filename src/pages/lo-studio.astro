@@ -44,9 +44,6 @@ const jsonLd = JSON.stringify({
               src={`${base}/imgs/ema_pagliaro.jpg`}
             />
           </div>
-          <div class="absolute -bottom-8 -left-8 p-10 bg-primary text-white hidden md:block max-w-xs">
-            <p class="font-headline text-2xl italic leading-tight">"Un buon avvocato non vi dice solo cosa dice la legge. Vi aiuta a capire cosa potete fare."</p>
-          </div>
         </div>
       </div>
     </section>
@@ -73,14 +70,6 @@ const jsonLd = JSON.stringify({
             </div>
           </div>
           <div class="reveal reveal-delay-1 flex flex-col justify-center space-y-12">
-            <div class="bg-surface-container-highest p-12 relative">
-              <div class="absolute top-0 left-0 w-1 h-full bg-tertiary"></div>
-              <span class="material-symbols-outlined text-tertiary-fixed-dim text-5xl mb-6">format_quote</span>
-              <blockquote class="text-3xl font-headline text-primary leading-tight italic">
-                La tutela del lavoratore non è solo una questione legale: è una questione di giustizia sociale.
-              </blockquote>
-              <cite class="block mt-8 font-label text-xs uppercase tracking-[0.4em] text-on-surface-variant not-italic">— Avv. Emanuele Pagliaro</cite>
-            </div>
             <div class="grid grid-cols-2 gap-8 border-t border-outline-variant/15 pt-8">
               <div>
                 <p class="text-4xl font-serif text-primary">20+</p>
@@ -99,12 +88,11 @@ const jsonLd = JSON.stringify({
     <!-- Team -->
     <section class="py-32 bg-surface">
       <div class="max-w-7xl mx-auto px-8">
-        <div class="reveal mb-20 text-center">
-          <h2 class="text-5xl text-primary font-headline italic">Le Persone dello Studio</h2>
-          <p class="text-outline font-label tracking-[0.3em] uppercase text-xs mt-4">Professionisti al Vostro Fianco</p>
-          <div class="h-px w-16 bg-tertiary-fixed-dim mx-auto mt-6"></div>
+        <div class="reveal mb-20 max-w-2xl">
+          <span class="text-tertiary-fixed-dim font-label tracking-[0.3em] uppercase text-xs mb-4 block">Professionisti al vostro fianco</span>
+          <h2 class="text-5xl text-primary font-headline">Le Persone dello Studio</h2>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div class="reveal reveal-delay-1 group hover:bg-surface-container-low transition-colors duration-500 p-8 cursor-default">
             <div class="aspect-[3/4] bg-surface-container-high overflow-hidden mb-6">
               <img
@@ -116,8 +104,8 @@ const jsonLd = JSON.stringify({
             <h3 class="text-2xl text-primary font-headline mb-1">Avv. Emanuele Pagliaro</h3>
             <p class="text-tertiary-fixed-dim text-xs uppercase tracking-widest mb-4">Avvocato Titolare</p>
             <p class="text-on-surface-variant text-sm leading-relaxed">Diritto del lavoro, previdenza sociale, pubblico impiego e diritto sindacale.</p>
-            <a href="mailto:e.pagliaro@avvocatopagliaro.it" class="inline-block mt-4 text-primary font-label text-xs uppercase tracking-widest border-b border-tertiary-fixed-dim pb-1 hover:text-tertiary-fixed-dim transition-colors duration-200">
-              e.pagliaro@avvocatopagliaro.it
+            <a href="mailto:info@avvocatopagliaro.it" class="inline-block mt-4 text-primary font-label text-xs uppercase tracking-widest border-b border-tertiary-fixed-dim pb-1 hover:text-tertiary-fixed-dim transition-colors duration-200">
+              info@avvocatopagliaro.it
             </a>
           </div>
           <div class="reveal reveal-delay-2 group hover:bg-surface-container-low transition-colors duration-500 p-8 cursor-default">
@@ -141,44 +129,31 @@ const jsonLd = JSON.stringify({
 
     <!-- Modalità Operative -->
     <section class="max-w-7xl mx-auto px-8 py-32">
-      <div class="reveal bg-primary text-white p-16 md:p-24 relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-64 h-64 bg-tertiary-fixed-dim/10 rounded-full -mr-32 -mt-32"></div>
-        <div class="relative z-10 max-w-2xl">
-          <h2 class="text-5xl md:text-6xl font-headline mb-8 leading-tight">Vicini al cliente, <br /><span class="italic text-tertiary-fixed-dim">ovunque si trovi.</span></h2>
+      <div class="reveal bg-primary text-white p-16 md:p-24">
+        <div class="max-w-3xl">
+          <h2 class="text-5xl md:text-6xl font-headline mb-8 leading-tight">Vicini al cliente,<br />ovunque si trovi.</h2>
           <p class="text-primary-fixed text-lg font-body font-light mb-12 leading-relaxed">
             Lo studio è presente a Chieti e Roma, ma garantisce assistenza completa anche a distanza — per telefono, videochiamata o qualsiasi altro mezzo preferiate. La vicinanza non è una questione di chilometri.
           </p>
-          <ul class="space-y-6">
-            <li class="flex items-center gap-4">
-              <span class="material-symbols-outlined text-tertiary-fixed-dim">check_circle</span>
-              <span class="font-label uppercase tracking-widest text-sm">In presenza a Chieti e Roma</span>
-            </li>
-            <li class="flex items-center gap-4">
-              <span class="material-symbols-outlined text-tertiary-fixed-dim">check_circle</span>
-              <span class="font-label uppercase tracking-widest text-sm">Consulenze telefoniche e in videochiamata</span>
-            </li>
-            <li class="flex items-center gap-4">
-              <span class="material-symbols-outlined text-tertiary-fixed-dim">check_circle</span>
-              <span class="font-label uppercase tracking-widest text-sm">Prima consulenza nei tempi del cliente</span>
-            </li>
-            <li class="flex items-center gap-4">
-              <span class="material-symbols-outlined text-tertiary-fixed-dim">check_circle</span>
-              <span class="font-label uppercase tracking-widest text-sm">Corte di Cassazione — Roma</span>
-            </li>
+          <ul class="space-y-4 border-t border-tertiary-fixed-dim/25 pt-8">
+            <li class="font-label uppercase tracking-widest text-sm">In presenza a Chieti e Roma</li>
+            <li class="font-label uppercase tracking-widest text-sm">Consulenze telefoniche e in videochiamata</li>
+            <li class="font-label uppercase tracking-widest text-sm">Prima consulenza nei tempi del cliente</li>
+            <li class="font-label uppercase tracking-widest text-sm">Corte di Cassazione — Roma</li>
           </ul>
         </div>
       </div>
     </section>
 
     <!-- CTA -->
-    <section class="py-32 bg-surface text-center">
-      <div class="max-w-3xl mx-auto px-8">
+    <section class="py-32 bg-surface">
+      <div class="max-w-7xl mx-auto px-8">
         <div class="reveal">
-          <h2 class="text-5xl font-headline text-primary mb-8">Pronti ad ascoltarvi.</h2>
-          <p class="text-on-surface-variant mb-12 text-lg leading-relaxed">
+          <h2 class="text-5xl font-headline text-primary mb-8 max-w-2xl">Pronti ad ascoltarvi.</h2>
+          <p class="text-on-surface-variant mb-12 text-lg leading-relaxed max-w-2xl">
             Ogni situazione è diversa. Contattateci per fissare un primo appuntamento riservato e ricevere una valutazione chiara della vostra posizione.
           </p>
-          <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <div class="flex flex-col sm:flex-row gap-4">
             <a
               href={`${base}/contatti`}
               class="group inline-flex items-center justify-center gap-3 bg-primary text-on-primary px-10 py-5 rounded-sm font-label text-sm uppercase tracking-widest hover:bg-primary/85 active:scale-[0.97] transition-all duration-200"

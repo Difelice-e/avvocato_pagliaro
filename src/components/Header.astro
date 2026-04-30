@@ -22,6 +22,7 @@ const navLinks = [
       {navLinks.map(({ id, href, label }) => (
         <a
           href={href}
+          aria-current={currentPage === id ? 'page' : undefined}
           class:list={[
             'font-serif text-lg tracking-tight transition-colors duration-200',
             currentPage === id
