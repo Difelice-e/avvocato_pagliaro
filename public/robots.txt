@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /privacy-policy.html
+Disallow: /cookie-policy.html
+Disallow: /note-legali.html
+
+Sitemap: https://www.avvocatopagliaro.it/sitemap.xml

@@ -1,0 +1,186 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const jsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.avvocatopagliaro.it/' },
+    { '@type': 'ListItem', position: 2, name: 'Competenze', item: 'https://www.avvocatopagliaro.it/competenze' },
+  ],
+});
+---
+
+<Layout
+  title="Competenze | Studio Legale Pagliaro — Diritto del Lavoro"
+  description="Aree di competenza dello Studio Legale Pagliaro: diritto del lavoro, previdenza sociale, pubblico impiego, diritto sindacale e infortunistica."
+  canonical="https://www.avvocatopagliaro.it/competenze"
+  currentPage="competenze"
+  jsonLd={jsonLd}
+>
+  <main class="pt-32">
+    <!-- Hero -->
+    <section class="max-w-7xl mx-auto px-8 mb-28">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
+        <div class="lg:col-span-8">
+          <span class="text-on-tertiary-container font-label text-xs uppercase tracking-[0.3em] mb-6 block">Il Nostro Rigore</span>
+          <h1 class="font-headline text-6xl md:text-8xl text-primary tracking-tighter leading-none italic mb-8">
+            Aree di <br />Competenza
+          </h1>
+          <div class="h-1 w-24 bg-tertiary-fixed-dim"></div>
+        </div>
+        <div class="lg:col-span-4 pb-4">
+          <p class="text-on-surface-variant text-lg leading-relaxed font-light">
+            Un approccio dedicato e specializzato alla tutela dei lavoratori. Ogni pratica è trattata con precisione giuridica e attenzione alla persona.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bento Grid -->
+    <section class="max-w-7xl mx-auto px-8 mb-40">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="md:col-span-2 group relative overflow-hidden bg-primary p-12 flex flex-col justify-between min-h-[500px]">
+          <div class="relative z-10">
+            <span class="material-symbols-outlined text-tertiary-fixed-dim text-4xl mb-6">work</span>
+            <h3 class="font-headline text-4xl text-on-primary mb-4 italic">Diritto del Lavoro</h3>
+            <p class="text-on-primary/70 text-lg max-w-md leading-relaxed">
+              Tutela completa nei rapporti di lavoro privato: licenziamenti illegittimi, demansionamento, mobbing, discriminazioni, trasferimenti, variazioni contrattuali e risarcimento danni.
+            </p>
+          </div>
+          <div class="relative z-10 flex items-center group/link">
+            <a class="text-on-primary font-label text-sm uppercase tracking-widest border-b border-tertiary-fixed-dim/30 pb-1 group-hover/link:border-tertiary-fixed-dim transition-all" href="/contatti">Prenota una Consulenza</a>
+          </div>
+        </div>
+        <div class="group bg-surface-container-low p-10 flex flex-col justify-between border-l-4 border-tertiary-fixed-dim transition-colors hover:bg-surface-container">
+          <div>
+            <span class="material-symbols-outlined text-primary text-4xl mb-6">account_balance</span>
+            <h3 class="font-headline text-3xl text-primary mb-4">Previdenza Sociale</h3>
+            <p class="text-on-surface-variant leading-relaxed mb-6">
+              Ricorsi INPS, pensioni di anzianità e anticipate, invalidità civile, contributi previdenziali e vertenze previdenziali in ogni grado di giudizio.
+            </p>
+          </div>
+          <ul class="space-y-3 text-sm font-label text-on-surface/80">
+            <li class="flex items-center gap-2"><span class="w-1 h-1 bg-tertiary-fixed-dim rounded-full"></span> Pensioni e Contributi</li>
+            <li class="flex items-center gap-2"><span class="w-1 h-1 bg-tertiary-fixed-dim rounded-full"></span> Invalidità Civile e Lavoro</li>
+            <li class="flex items-center gap-2"><span class="w-1 h-1 bg-tertiary-fixed-dim rounded-full"></span> Ricorsi INPS e INAIL</li>
+          </ul>
+        </div>
+        <div class="group bg-surface-container-highest p-10 flex flex-col justify-between">
+          <div>
+            <span class="material-symbols-outlined text-primary text-3xl mb-6">domain</span>
+            <h3 class="font-headline text-2xl text-primary mb-3">Pubblico Impiego</h3>
+            <p class="text-on-surface-variant text-sm leading-relaxed">
+              Controversie con enti pubblici, concorsi e selezioni, progressioni economiche e di carriera, procedimenti disciplinari e mobbing nel lavoro pubblico.
+            </p>
+          </div>
+          <a class="inline-block mt-8 text-primary font-label text-xs uppercase tracking-widest underline decoration-tertiary-fixed-dim underline-offset-4" href="/contatti">Consulenza</a>
+        </div>
+        <div class="group bg-primary-container p-10 flex flex-col justify-between">
+          <div>
+            <span class="material-symbols-outlined text-tertiary-fixed-dim text-3xl mb-6">groups</span>
+            <h3 class="font-headline text-2xl text-on-primary mb-3">Diritto Sindacale</h3>
+            <p class="text-on-primary/60 text-sm leading-relaxed">
+              Assistenza nelle vertenze sindacali collettive, contrattazione, tutela delle rappresentanze sindacali e conflitti collettivi di lavoro.
+            </p>
+          </div>
+          <a class="inline-block mt-8 text-on-primary font-label text-xs uppercase tracking-widest underline decoration-tertiary-fixed-dim underline-offset-4" href="/contatti">Consulenza</a>
+        </div>
+        <div class="group bg-white p-10 flex flex-col justify-between shadow-sm border border-outline-variant/10">
+          <div>
+            <span class="material-symbols-outlined text-primary text-3xl mb-6">medical_services</span>
+            <h3 class="font-headline text-2xl text-primary mb-3">Infortunistica</h3>
+            <p class="text-on-surface-variant text-sm leading-relaxed">
+              Risarcimento danni per infortuni sul lavoro, malattie professionali, responsabilità del datore di lavoro e tutela dell&rsquo;integrità fisica del lavoratore.
+            </p>
+          </div>
+          <a class="inline-block mt-8 text-primary font-label text-xs uppercase tracking-widest underline decoration-tertiary-fixed-dim underline-offset-4" href="/contatti">Consulenza</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Citazione -->
+    <section class="max-w-5xl mx-auto px-8 mb-40">
+      <div class="relative bg-surface-container-highest p-16 md:p-24 border-l-[6px] border-tertiary">
+        <span class="material-symbols-outlined absolute top-8 left-8 text-6xl text-tertiary-fixed-dim/30 select-none">format_quote</span>
+        <p class="font-headline text-3xl md:text-4xl text-primary italic leading-tight relative z-10">
+          "Il diritto del lavoro tutela la dignità delle persone nel luogo dove trascorrono la maggior parte della loro vita. Questo lo rende, ai miei occhi, il più importante."
+        </p>
+        <p class="mt-8 font-label text-xs uppercase tracking-[0.4em] text-on-surface-variant">— Avv. Emanuele Pagliaro</p>
+      </div>
+    </section>
+
+    <!-- Band immagine -->
+    <div class="relative w-full h-72 overflow-hidden">
+      <img
+        src="https://images.unsplash.com/photo-1521791055366-0d553872952f?w=1600&auto=format&fit=crop&q=80"
+        alt="Biblioteca giuridica"
+        class="w-full h-full object-cover grayscale contrast-110 object-[center_40%]"
+      />
+      <div class="absolute inset-0 bg-primary/70"></div>
+      <div class="absolute inset-0 flex items-center justify-center px-8 text-center">
+        <div>
+          <span class="text-tertiary-fixed-dim font-label text-xs uppercase tracking-[0.4em] block mb-4">Studio Legale Pagliaro</span>
+          <p class="font-headline text-3xl md:text-5xl text-white italic leading-tight">
+            Il metodo. La precisione. La difesa.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Il Metodo -->
+    <section class="bg-primary py-32 text-on-primary overflow-hidden">
+      <div class="max-w-7xl mx-auto px-8">
+        <div class="flex flex-col md:flex-row justify-between items-baseline mb-20 gap-8">
+          <h2 class="font-headline text-5xl tracking-tight italic">Il Metodo Pagliaro</h2>
+          <p class="text-on-primary-container max-w-sm font-light">
+            Tre fasi fondamentali per trasformare ogni complessità giuridica in una soluzione efficace per il cliente.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-16 relative">
+          <div class="relative group">
+            <span class="text-8xl font-headline italic text-tertiary-fixed-dim/10 absolute -top-12 -left-4">01</span>
+            <div class="relative pt-8">
+              <h4 class="font-headline text-2xl mb-4 text-tertiary-fixed-dim">Ascolto e Analisi</h4>
+              <p class="text-on-primary/70 leading-relaxed font-light">
+                Prima di tutto, ascoltiamo. Ogni caso viene analizzato nella sua specificità, raccogliendo tutta la documentazione utile e identificando i margini di azione.
+              </p>
+            </div>
+          </div>
+          <div class="relative group">
+            <span class="text-8xl font-headline italic text-tertiary-fixed-dim/10 absolute -top-12 -left-4">02</span>
+            <div class="relative pt-8">
+              <h4 class="font-headline text-2xl mb-4 text-tertiary-fixed-dim">Strategia Personalizzata</h4>
+              <p class="text-on-primary/70 leading-relaxed font-light">
+                Definiamo insieme il percorso più efficace: accordo stragiudiziale, mediazione o azione giudiziale. Il cliente è sempre informato e coinvolto.
+              </p>
+            </div>
+          </div>
+          <div class="relative group">
+            <span class="text-8xl font-headline italic text-tertiary-fixed-dim/10 absolute -top-12 -left-4">03</span>
+            <div class="relative pt-8">
+              <h4 class="font-headline text-2xl mb-4 text-tertiary-fixed-dim">Difesa Rigorosa</h4>
+              <p class="text-on-primary/70 leading-relaxed font-light">
+                Rappresentanza ferma e competente in ogni grado di giudizio, con aggiornamento costante del cliente sull&rsquo;avanzamento della pratica.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-40 text-center">
+      <div class="max-w-3xl mx-auto px-8">
+        <h2 class="font-headline text-5xl text-primary mb-8 tracking-tighter">Vuoi capire se hai un caso?</h2>
+        <p class="text-on-surface-variant text-lg mb-12 font-light">
+          Prenota una prima consultazione per discutere la tua situazione con l&rsquo;Avv. Pagliaro.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-6">
+          <a href="/contatti" class="bg-primary text-on-primary px-10 py-5 rounded-sm font-label text-sm uppercase tracking-widest hover:bg-primary-container transition-all text-center">Contatta lo Studio</a>
+          <a href="/profilo" class="border border-primary text-primary px-10 py-5 rounded-sm font-label text-sm uppercase tracking-widest hover:bg-surface-container-low transition-all text-center">Chi Siamo</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

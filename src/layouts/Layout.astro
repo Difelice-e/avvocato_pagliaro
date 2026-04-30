@@ -1,0 +1,172 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical: string;
+  ogImage?: string;
+  robots?: string;
+  jsonLd?: string;
+  currentPage?: string;
+}
+
+const {
+  title,
+  description,
+  canonical,
+  ogImage = 'https://www.avvocatopagliaro.it/imgs/ema_pagliaro.jpg',
+  robots = 'index, follow',
+  jsonLd,
+  currentPage = '',
+} = Astro.props;
+---
+
+<!doctype html>
+<html class="light" lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta name="robots" content={robots} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content="it_IT" />
+    <meta property="og:site_name" content="Studio Legale Pagliaro" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    {jsonLd && <script type="application/ld+json" set:html={jsonLd} />}
+    <link
+      href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    class="bg-background text-on-background font-body antialiased selection:bg-tertiary-fixed selection:text-on-tertiary-fixed"
+  >
+    <Header currentPage={currentPage} />
+    <slot />
+    <Footer />
+  </body>
+</html>
+
+<style is:global>
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+  }
+
+  /* ── Hero entrance animations ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .hero-anim-1 { animation: fadeUp 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.05s both; }
+  .hero-anim-2 { animation: fadeUp 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.20s both; }
+  .hero-anim-3 { animation: fadeUp 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.35s both; }
+  .hero-anim-4 { animation: fadeUp 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.50s both; }
+  .hero-img-anim { animation: fadeUp 0.90s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both; }
+
+  /* ── Scroll-reveal ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.08s; }
+  .reveal-delay-2 { transition-delay: 0.16s; }
+  .reveal-delay-3 { transition-delay: 0.24s; }
+  .reveal-delay-4 { transition-delay: 0.32s; }
+  .reveal-delay-5 { transition-delay: 0.40s; }
+
+  /* ── Navbar shadow on scroll ── */
+  nav.scrolled { box-shadow: 0 2px 24px 0 rgba(4, 22, 39, 0.10); }
+
+  /* ── CTA arrow micro-animation ── */
+  .cta-arrow { transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1); }
+  .group:hover .cta-arrow { transform: translateX(5px); }
+
+  /* ── Bento card hover ── */
+  .bento-card {
+    transition: box-shadow 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .bento-card:hover {
+    box-shadow: 0 8px 32px rgba(4, 22, 39, 0.08);
+    transform: translateY(-3px);
+  }
+
+  /* ── Link card hover (risorse) ── */
+  .link-card {
+    transition: box-shadow 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s;
+  }
+  .link-card:hover {
+    box-shadow: 0 6px 24px rgba(4, 22, 39, 0.08);
+    transform: translateY(-2px);
+    border-color: #f7bd48;
+  }
+
+  /* ── Map frame filter (contatti) ── */
+  .map-frame { filter: grayscale(1) contrast(1.05); transition: filter 0.5s ease; }
+  .map-frame:hover { filter: grayscale(0); }
+
+  /* ── Respect prefers-reduced-motion ── */
+  @media (prefers-reduced-motion: reduce) {
+    .reveal,
+    .hero-anim-1, .hero-anim-2, .hero-anim-3, .hero-anim-4, .hero-img-anim,
+    .bento-card, .cta-arrow, .link-card {
+      animation: none !important;
+      transition: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
+</style>
+
+<script>
+  // Navbar shadow on scroll
+  (function () {
+    const nav = document.getElementById('main-nav');
+    if (!nav) return;
+    window.addEventListener('scroll', function () {
+      nav.classList.toggle('scrolled', window.scrollY > 12);
+    }, { passive: true });
+  })();
+
+  // Scroll-reveal via IntersectionObserver
+  (function () {
+    if (!('IntersectionObserver' in window)) {
+      document.querySelectorAll('.reveal').forEach(function (el) {
+        el.classList.add('visible');
+      });
+      return;
+    }
+    const observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.10, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(function (el) {
+      observer.observe(el);
+    });
+  })();
+</script>

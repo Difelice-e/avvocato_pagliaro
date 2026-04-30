@@ -1,0 +1,73 @@
+---
+interface Props {
+  currentPage: string;
+}
+const { currentPage } = Astro.props;
+
+const navLinks = [
+  { id: 'home', href: '/', label: 'Home' },
+  { id: 'competenze', href: '/competenze', label: 'Competenze' },
+  { id: 'lo-studio', href: '/lo-studio', label: 'Lo Studio' },
+  { id: 'contatti', href: '/contatti', label: 'Contatti' },
+];
+---
+
+<nav id="main-nav" class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-lg transition-shadow duration-300">
+  <div class="max-w-7xl mx-auto px-8 flex justify-between items-center h-24 w-full">
+    <a href="/" class="text-2xl font-serif font-bold tracking-tighter text-slate-900">
+      Studio Legale Pagliaro
+    </a>
+    <div class="hidden md:flex space-x-12 items-center">
+      {navLinks.map(({ id, href, label }) => (
+        <a
+          href={href}
+          class:list={[
+            'font-serif text-lg tracking-tight transition-colors duration-200',
+            currentPage === id
+              ? 'text-slate-900 border-b border-amber-400 pb-1 font-medium'
+              : 'text-slate-500 hover:text-slate-900',
+          ]}
+        >
+          {label}
+        </a>
+      ))}
+    </div>
+    <div class="flex items-center gap-3">
+      <a
+        href="/contatti"
+        class="hidden md:inline-flex items-center gap-2 bg-primary text-on-primary px-6 py-3 rounded-sm font-label text-sm uppercase tracking-widest hover:bg-primary/85 active:scale-[0.97] transition-all duration-200"
+      >
+        Richiedi una Consulenza
+      </a>
+      <button
+        id="menu-btn"
+        class="md:hidden p-2 text-slate-900 hover:bg-slate-100 rounded transition-colors duration-200"
+        aria-label="Apri menu"
+      >
+        <span class="material-symbols-outlined text-3xl">menu</span>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-8 py-6 space-y-4">
+    {navLinks.map(({ href, label }) => (
+      <a
+        href={href}
+        class="block font-serif text-lg tracking-tight text-slate-700 hover:text-slate-900 py-2 border-b border-slate-100 transition-colors duration-200"
+      >
+        {label}
+      </a>
+    ))}
+    <a
+      href="/contatti"
+      class="inline-block mt-2 bg-primary text-on-primary px-6 py-3 rounded-sm font-label text-sm uppercase tracking-widest"
+    >
+      Richiedi una Consulenza
+    </a>
+  </div>
+</nav>
+
+<script>
+  document.getElementById('menu-btn')?.addEventListener('click', () => {
+    document.getElementById('mobile-menu')?.classList.toggle('hidden');
+  });
+</script>

@@ -2,3 +2,15 @@ CLAUDE.md
 .impeccable.md
 .audit.md
 .claude
+
+# Astro build output
+dist/
+.astro/
+
+# Node
+node_modules/
+npm-debug.log*
+
+# Env
+.env
+.env.*

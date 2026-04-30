@@ -1,0 +1,208 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const jsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.avvocatopagliaro.it/' },
+    { '@type': 'ListItem', position: 2, name: 'Lo Studio', item: 'https://www.avvocatopagliaro.it/lo-studio' },
+  ],
+});
+---
+
+<Layout
+  title="Lo Studio | Avv. Emanuele Pagliaro — Studio Legale a Chieti e Roma"
+  description="Lo Studio Legale Pagliaro: profilo professionale, team e filosofia. Avv. Emanuele Pagliaro, specialista in diritto del lavoro e previdenza sociale, Chieti e Roma."
+  canonical="https://www.avvocatopagliaro.it/lo-studio"
+  currentPage="lo-studio"
+  jsonLd={jsonLd}
+>
+  <main class="pt-32">
+    <!-- Hero -->
+    <section class="max-w-7xl mx-auto px-8 mb-32">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+        <div class="lg:col-span-5 order-2 lg:order-1">
+          <span class="hero-anim-1 text-tertiary-fixed-dim font-body uppercase tracking-[0.2em] text-xs font-semibold mb-6 block">Avvocato Titolare</span>
+          <h1 class="hero-anim-2 text-7xl lg:text-8xl text-primary leading-[0.9] tracking-tighter mb-8 font-headline">
+            Emanuele <br />Pagliaro
+          </h1>
+          <p class="hero-anim-3 text-on-surface-variant text-xl leading-relaxed font-body font-light mb-10 max-w-md">
+            Avvocato specializzato in diritto del lavoro, previdenza sociale e pubblico impiego. Da oltre vent&rsquo;anni difende i diritti di chi lavora, con rigore e vicinanza alla persona.
+          </p>
+          <div class="hero-anim-3 flex items-center gap-6">
+            <div class="h-px w-12 bg-outline-variant/30"></div>
+            <span class="italic text-primary font-headline text-lg">Il tuo diritto è la mia professione</span>
+          </div>
+        </div>
+        <div class="hero-img-anim lg:col-span-7 order-1 lg:order-2 relative">
+          <div class="aspect-[4/5] bg-surface-container-high overflow-hidden shadow-2xl">
+            <img
+              alt="Avv. Emanuele Pagliaro — Studio Legale Pagliaro, Chieti e Roma"
+              class="w-full h-full object-cover grayscale contrast-125"
+              src="/imgs/ema_pagliaro.jpg"
+            />
+          </div>
+          <div class="absolute -bottom-8 -left-8 p-10 bg-primary text-white hidden md:block max-w-xs">
+            <p class="font-headline text-2xl italic leading-tight">"Un buon avvocato non vi dice solo cosa dice la legge. Vi aiuta a capire cosa potete fare."</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Biografia -->
+    <section class="bg-surface-container-low py-32">
+      <div class="max-w-7xl mx-auto px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-24">
+          <div class="reveal">
+            <h2 class="text-4xl text-primary mb-12 font-headline flex items-center gap-4">
+              <span class="w-8 h-px bg-tertiary-fixed-dim"></span>
+              Percorso Professionale
+            </h2>
+            <div class="space-y-8 text-on-surface-variant text-lg leading-loose font-body font-light">
+              <p>
+                Lo Studio Legale Pagliaro nasce dall&rsquo;impegno personale di Emanuele Pagliaro per una professione che mette la persona al centro. Specializzato in controversie individuali e collettive del lavoro, opera con rigore giuridico e attenzione costante a chi si affida allo studio.
+              </p>
+              <p>
+                L&rsquo;approccio dello studio si distingue per la chiarezza nella comunicazione con il cliente, la precisione nell&rsquo;analisi giuridica e la capacità di costruire strategie efficaci — sia in sede giudiziale che stragiudiziale. Il cliente è sempre informato e parte attiva di ogni decisione.
+              </p>
+              <p>
+                Lo studio opera su tutto il territorio nazionale, con sedi operative a Chieti e Roma. Per le cause dinanzi alla Corte di Cassazione, l&rsquo;Avv. Pagliaro opera dalla sede romana.
+              </p>
+            </div>
+          </div>
+          <div class="reveal reveal-delay-1 flex flex-col justify-center space-y-12">
+            <div class="bg-surface-container-highest p-12 relative">
+              <div class="absolute top-0 left-0 w-1 h-full bg-tertiary"></div>
+              <span class="material-symbols-outlined text-tertiary-fixed-dim text-5xl mb-6">format_quote</span>
+              <blockquote class="text-3xl font-headline text-primary leading-tight italic">
+                La tutela del lavoratore non è solo una questione legale: è una questione di giustizia sociale.
+              </blockquote>
+              <cite class="block mt-6 text-sm font-label uppercase tracking-widest text-outline">— Avv. Emanuele Pagliaro</cite>
+            </div>
+            <div class="grid grid-cols-2 gap-8">
+              <div>
+                <h4 class="text-primary font-headline text-5xl mb-2">20+</h4>
+                <p class="text-outline text-xs uppercase tracking-widest">Anni di Attività</p>
+              </div>
+              <div>
+                <h4 class="text-primary font-headline text-5xl mb-2">2</h4>
+                <p class="text-outline text-xs uppercase tracking-widest">Sedi: Chieti &amp; Roma</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team -->
+    <section class="py-32 bg-surface">
+      <div class="max-w-7xl mx-auto px-8">
+        <div class="reveal mb-20 text-center">
+          <h2 class="text-5xl text-primary font-headline italic">Le Persone dello Studio</h2>
+          <p class="text-outline font-label tracking-[0.3em] uppercase text-xs mt-4">Professionisti al Vostro Fianco</p>
+          <div class="h-px w-16 bg-tertiary-fixed-dim mx-auto mt-6"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+          <div class="reveal reveal-delay-1 group hover:bg-surface-container-low transition-colors duration-500 p-8 cursor-default">
+            <div class="aspect-[3/4] bg-surface-container-high overflow-hidden mb-6">
+              <img
+                alt="Avv. Emanuele Pagliaro — Avvocato Titolare, Studio Legale Pagliaro"
+                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                src="/imgs/ema_pagliaro.jpg"
+              />
+            </div>
+            <h3 class="text-2xl text-primary font-headline mb-1">Avv. Emanuele Pagliaro</h3>
+            <p class="text-tertiary-fixed-dim text-xs uppercase tracking-widest mb-4">Avvocato Titolare</p>
+            <p class="text-on-surface-variant text-sm leading-relaxed">Diritto del lavoro, previdenza sociale, pubblico impiego e diritto sindacale.</p>
+            <a href="mailto:e.pagliaro@avvocatopagliaro.it" class="inline-block mt-4 text-primary font-label text-xs uppercase tracking-widest border-b border-tertiary-fixed-dim pb-1 hover:text-tertiary-fixed-dim transition-colors duration-200">
+              e.pagliaro@avvocatopagliaro.it
+            </a>
+          </div>
+          <div class="reveal reveal-delay-2 group hover:bg-surface-container-low transition-colors duration-500 p-8 cursor-default">
+            <div class="aspect-[3/4] bg-surface-container-high overflow-hidden mb-6">
+              <img
+                alt="Avv. G. Pagliaro — Avvocato Collaboratore, Studio Legale Pagliaro"
+                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                src="/imgs/gia_pagliaro.jpg"
+              />
+            </div>
+            <h3 class="text-2xl text-primary font-headline mb-1">Avv. G. Pagliaro</h3>
+            <p class="text-tertiary-fixed-dim text-xs uppercase tracking-widest mb-4">Avvocato Collaboratore</p>
+            <p class="text-on-surface-variant text-sm leading-relaxed">Diritto del lavoro, contenzioso civile e previdenza sociale.</p>
+            <a href="mailto:info@avvocatopagliaro.it" class="inline-block mt-4 text-primary font-label text-xs uppercase tracking-widest border-b border-tertiary-fixed-dim pb-1 hover:text-tertiary-fixed-dim transition-colors duration-200">
+              info@avvocatopagliaro.it
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modalità Operative -->
+    <section class="max-w-7xl mx-auto px-8 py-32">
+      <div class="reveal bg-primary text-white p-16 md:p-24 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-tertiary-fixed-dim/10 rounded-full -mr-32 -mt-32"></div>
+        <div class="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <h2 class="text-5xl md:text-6xl font-headline mb-8 leading-tight">Vicini al cliente, <br /><span class="italic text-tertiary-fixed-dim">ovunque si trovi.</span></h2>
+            <p class="text-primary-fixed text-lg font-body font-light mb-12 leading-relaxed">
+              Lo studio è presente a Chieti e Roma, ma garantisce assistenza completa anche a distanza — per telefono, videochiamata o qualsiasi altro mezzo preferiate. La vicinanza non è una questione di chilometri.
+            </p>
+            <ul class="space-y-6">
+              <li class="flex items-center gap-4">
+                <span class="material-symbols-outlined text-tertiary-fixed-dim">check_circle</span>
+                <span class="font-label uppercase tracking-widest text-sm">In presenza a Chieti e Roma</span>
+              </li>
+              <li class="flex items-center gap-4">
+                <span class="material-symbols-outlined text-tertiary-fixed-dim">check_circle</span>
+                <span class="font-label uppercase tracking-widest text-sm">Consulenze telefoniche e in videochiamata</span>
+              </li>
+              <li class="flex items-center gap-4">
+                <span class="material-symbols-outlined text-tertiary-fixed-dim">check_circle</span>
+                <span class="font-label uppercase tracking-widest text-sm">Prima consulenza nei tempi del cliente</span>
+              </li>
+              <li class="flex items-center gap-4">
+                <span class="material-symbols-outlined text-tertiary-fixed-dim">check_circle</span>
+                <span class="font-label uppercase tracking-widest text-sm">Corte di Cassazione — Roma</span>
+              </li>
+            </ul>
+          </div>
+          <div class="aspect-square bg-white/5 backdrop-blur-sm p-2 flex items-center justify-center overflow-hidden">
+            <img
+              alt="Studio legale professionale"
+              class="w-full h-full object-cover opacity-80 mix-blend-overlay"
+              src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&auto=format&fit=crop&q=80"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-32 bg-surface text-center">
+      <div class="max-w-3xl mx-auto px-8">
+        <div class="reveal">
+          <h2 class="text-5xl font-headline italic text-primary mb-8">Pronti ad ascoltarvi.</h2>
+          <p class="text-on-surface-variant mb-12 text-lg leading-relaxed">
+            Ogni situazione è diversa. Contattateci per fissare un primo appuntamento riservato e ricevere una valutazione chiara della vostra posizione.
+          </p>
+          <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a
+              href="/contatti"
+              class="group inline-flex items-center justify-center gap-3 bg-primary text-on-primary px-10 py-5 rounded-sm font-label text-sm uppercase tracking-widest hover:bg-primary/85 active:scale-[0.97] transition-all duration-200"
+            >
+              Richiedi una Consulenza
+              <span class="material-symbols-outlined text-base cta-arrow">arrow_forward</span>
+            </a>
+            <a
+              href="/competenze"
+              class="inline-flex items-center justify-center gap-2 border border-primary text-primary px-10 py-5 rounded-sm font-label text-sm uppercase tracking-widest hover:bg-primary hover:text-on-primary active:scale-[0.97] transition-all duration-200"
+            >
+              Le Nostre Competenze
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

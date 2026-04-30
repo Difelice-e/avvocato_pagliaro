@@ -1,0 +1,151 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const jsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.avvocatopagliaro.it/' },
+    { '@type': 'ListItem', position: 2, name: 'Risorse', item: 'https://www.avvocatopagliaro.it/risorse' },
+  ],
+});
+---
+
+<Layout
+  title="Risorse & Link Utili | Studio Legale Pagliaro"
+  description="Risorse e link utili per lavoratori e professionisti: Consiglio Nazionale Forense, Gazzetta Ufficiale, INPS, Ministero del Lavoro e altri enti istituzionali."
+  canonical="https://www.avvocatopagliaro.it/risorse"
+  jsonLd={jsonLd}
+>
+  <main class="pt-40 pb-20">
+    <!-- Hero -->
+    <header class="max-w-7xl mx-auto px-8 mb-24">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+        <div class="md:col-span-8">
+          <span class="text-on-tertiary-container font-label text-xs uppercase tracking-[0.2em] mb-4 block">Risorse</span>
+          <h1 class="font-headline text-5xl md:text-7xl text-primary leading-tight tracking-tight mb-6">
+            Riferimenti <span class="italic">istituzionali</span>.
+          </h1>
+          <div class="h-1 w-24 bg-tertiary-fixed-dim"></div>
+        </div>
+        <div class="md:col-span-4 flex items-end">
+          <p class="text-on-surface-variant text-lg leading-relaxed font-body">
+            Una selezione di siti istituzionali utili per lavoratori, professionisti e chiunque voglia approfondire la normativa in materia di lavoro, previdenza e pubblica amministrazione.
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <!-- Categoria 1: Istituzioni dell'Avvocatura -->
+    <section class="max-w-7xl mx-auto px-8 mb-20">
+      <div class="reveal mb-10 flex items-center gap-6">
+        <h2 class="font-headline text-2xl text-primary">Istituzioni dell&rsquo;Avvocatura</h2>
+        <div class="flex-1 h-px bg-outline-variant/30"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <a href="http://www.consiglionazionaleforense.it" target="_blank" rel="noopener noreferrer" class="reveal reveal-delay-1 link-card block bg-surface-container-lowest border border-outline-variant/20 p-8 group">
+          <div class="flex items-start justify-between mb-6">
+            <span class="material-symbols-outlined text-3xl text-tertiary-fixed-dim">gavel</span>
+            <span class="material-symbols-outlined text-on-surface-variant/30 group-hover:text-tertiary-fixed-dim transition-colors duration-200 text-xl">open_in_new</span>
+          </div>
+          <h3 class="font-headline text-xl text-primary mb-2">Consiglio Nazionale Forense</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">Organo di governo e rappresentanza istituzionale dell&rsquo;avvocatura italiana. Albo avvocati, pareri e normativa deontologica.</p>
+          <span class="block mt-6 font-label text-xs uppercase tracking-widest text-outline group-hover:text-tertiary-fixed-dim transition-colors duration-200">consiglionazionaleforense.it</span>
+        </a>
+        <a href="http://www.cassaforense.it" target="_blank" rel="noopener noreferrer" class="reveal reveal-delay-2 link-card block bg-surface-container-lowest border border-outline-variant/20 p-8 group">
+          <div class="flex items-start justify-between mb-6">
+            <span class="material-symbols-outlined text-3xl text-tertiary-fixed-dim">account_balance</span>
+            <span class="material-symbols-outlined text-on-surface-variant/30 group-hover:text-tertiary-fixed-dim transition-colors duration-200 text-xl">open_in_new</span>
+          </div>
+          <h3 class="font-headline text-xl text-primary mb-2">Cassa Forense</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">Ente previdenziale e assistenziale degli avvocati italiani. Pensioni, contributi e prestazioni per i professionisti del foro.</p>
+          <span class="block mt-6 font-label text-xs uppercase tracking-widest text-outline group-hover:text-tertiary-fixed-dim transition-colors duration-200">cassaforense.it</span>
+        </a>
+        <a href="https://cnai.it/" target="_blank" rel="noopener noreferrer" class="reveal reveal-delay-3 link-card block bg-surface-container-lowest border border-outline-variant/20 p-8 group">
+          <div class="flex items-start justify-between mb-6">
+            <span class="material-symbols-outlined text-3xl text-tertiary-fixed-dim">balance</span>
+            <span class="material-symbols-outlined text-on-surface-variant/30 group-hover:text-tertiary-fixed-dim transition-colors duration-200 text-xl">open_in_new</span>
+          </div>
+          <h3 class="font-headline text-xl text-primary mb-2">CNAI</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">Consulta Nazionale degli Avvocati Italianisti. Associazione per la promozione e la tutela della professione forense.</p>
+          <span class="block mt-6 font-label text-xs uppercase tracking-widest text-outline group-hover:text-tertiary-fixed-dim transition-colors duration-200">cnai.it</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Categoria 2: Enti Pubblici e Normativa -->
+    <section class="max-w-7xl mx-auto px-8 mb-20">
+      <div class="reveal mb-10 flex items-center gap-6">
+        <h2 class="font-headline text-2xl text-primary">Enti Pubblici e Normativa</h2>
+        <div class="flex-1 h-px bg-outline-variant/30"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <a href="http://www.gazzettaufficiale.it" target="_blank" rel="noopener noreferrer" class="reveal reveal-delay-1 link-card block bg-surface-container-lowest border border-outline-variant/20 p-8 group">
+          <div class="flex items-start justify-between mb-6">
+            <span class="material-symbols-outlined text-3xl text-tertiary-fixed-dim">article</span>
+            <span class="material-symbols-outlined text-on-surface-variant/30 group-hover:text-tertiary-fixed-dim transition-colors duration-200 text-xl">open_in_new</span>
+          </div>
+          <h3 class="font-headline text-xl text-primary mb-2">Gazzetta Ufficiale</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">Raccolta ufficiale delle leggi, dei decreti e dei regolamenti della Repubblica Italiana. Fonte primaria per la normativa vigente.</p>
+          <span class="block mt-6 font-label text-xs uppercase tracking-widest text-outline group-hover:text-tertiary-fixed-dim transition-colors duration-200">gazzettaufficiale.it</span>
+        </a>
+        <a href="https://www.agenziaentrate.gov.it/portale/" target="_blank" rel="noopener noreferrer" class="reveal reveal-delay-2 link-card block bg-surface-container-lowest border border-outline-variant/20 p-8 group">
+          <div class="flex items-start justify-between mb-6">
+            <span class="material-symbols-outlined text-3xl text-tertiary-fixed-dim">receipt_long</span>
+            <span class="material-symbols-outlined text-on-surface-variant/30 group-hover:text-tertiary-fixed-dim transition-colors duration-200 text-xl">open_in_new</span>
+          </div>
+          <h3 class="font-headline text-xl text-primary mb-2">Agenzia delle Entrate</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">Servizi fiscali e tributari, dichiarazioni, visure catastali e assistenza ai contribuenti. Portale ufficiale dell&rsquo;erario italiano.</p>
+          <span class="block mt-6 font-label text-xs uppercase tracking-widest text-outline group-hover:text-tertiary-fixed-dim transition-colors duration-200">agenziaentrate.gov.it</span>
+        </a>
+        <a href="https://www.lavoro.gov.it/" target="_blank" rel="noopener noreferrer" class="reveal reveal-delay-3 link-card block bg-surface-container-lowest border border-outline-variant/20 p-8 group">
+          <div class="flex items-start justify-between mb-6">
+            <span class="material-symbols-outlined text-3xl text-tertiary-fixed-dim">work</span>
+            <span class="material-symbols-outlined text-on-surface-variant/30 group-hover:text-tertiary-fixed-dim transition-colors duration-200 text-xl">open_in_new</span>
+          </div>
+          <h3 class="font-headline text-xl text-primary mb-2">Ministero del Lavoro</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">Ministero del Lavoro e delle Politiche Sociali. Normativa, circolari ministeriali, moduli e aggiornamenti su contratti e sicurezza.</p>
+          <span class="block mt-6 font-label text-xs uppercase tracking-widest text-outline group-hover:text-tertiary-fixed-dim transition-colors duration-200">lavoro.gov.it</span>
+        </a>
+        <a href="https://www.aranagenzia.it/" target="_blank" rel="noopener noreferrer" class="reveal reveal-delay-1 link-card block bg-surface-container-lowest border border-outline-variant/20 p-8 group">
+          <div class="flex items-start justify-between mb-6">
+            <span class="material-symbols-outlined text-3xl text-tertiary-fixed-dim">groups</span>
+            <span class="material-symbols-outlined text-on-surface-variant/30 group-hover:text-tertiary-fixed-dim transition-colors duration-200 text-xl">open_in_new</span>
+          </div>
+          <h3 class="font-headline text-xl text-primary mb-2">ARAN</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">Agenzia per la Rappresentanza Negoziale delle Pubbliche Amministrazioni. CCNL del pubblico impiego, contrattazione collettiva e circolari.</p>
+          <span class="block mt-6 font-label text-xs uppercase tracking-widest text-outline group-hover:text-tertiary-fixed-dim transition-colors duration-200">aranagenzia.it</span>
+        </a>
+        <a href="https://www.cnel.it/" target="_blank" rel="noopener noreferrer" class="reveal reveal-delay-2 link-card block bg-surface-container-lowest border border-outline-variant/20 p-8 group">
+          <div class="flex items-start justify-between mb-6">
+            <span class="material-symbols-outlined text-3xl text-tertiary-fixed-dim">domain</span>
+            <span class="material-symbols-outlined text-on-surface-variant/30 group-hover:text-tertiary-fixed-dim transition-colors duration-200 text-xl">open_in_new</span>
+          </div>
+          <h3 class="font-headline text-xl text-primary mb-2">CNEL</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">Consiglio Nazionale dell&rsquo;Economia e del Lavoro. Organo consultivo dello Stato su materie economiche, sociali e del lavoro.</p>
+          <span class="block mt-6 font-label text-xs uppercase tracking-widest text-outline group-hover:text-tertiary-fixed-dim transition-colors duration-200">cnel.it</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="max-w-7xl mx-auto px-8 mt-20">
+      <div class="reveal bg-surface-container-highest p-16 text-center relative overflow-hidden border-l-4 border-tertiary-fixed-dim">
+        <h2 class="font-serif text-4xl text-primary mb-6 leading-tight">Avete bisogno di una guida esperta?</h2>
+        <p class="text-on-surface-variant text-lg mb-10 max-w-xl mx-auto leading-relaxed">
+          Le risorse istituzionali sono un punto di partenza. Per un&rsquo;analisi concreta della vostra situazione, lo Studio Legale Pagliaro è a vostra disposizione.
+        </p>
+        <a
+          href="/contatti"
+          class="group inline-flex items-center justify-center gap-3 bg-primary text-on-primary px-10 py-5 rounded-sm font-label text-sm uppercase tracking-widest hover:bg-primary/85 active:scale-[0.97] transition-all duration-200"
+        >
+          Richiedi una Consulenza
+          <span class="material-symbols-outlined text-base cta-arrow">arrow_forward</span>
+        </a>
+        <div class="absolute top-0 right-0 p-12 opacity-5 pointer-events-none">
+          <span class="material-symbols-outlined text-[180px]">library_books</span>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
