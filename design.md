@@ -63,19 +63,23 @@ The footer uses standard Tailwind slate: `bg-slate-900`, text `slate-400 / slate
 
 ## Typography
 
+Loaded from Google Fonts in `src/layouts/Layout.astro`. All `font-*` Tailwind families resolve via `tailwind.config.cjs`.
+
 | Role | Font | Tailwind class |
 |------|------|----------------|
-| Display / Headings | Newsreader (serif, italic for display) | `font-serif` / `font-headline` |
-| Body | Inter | `font-body` / `font-sans` |
-| Labels / UI | Inter | `font-label` |
+| Display / Headings | Barlow Condensed (condensed sans, italic available) | `font-headline` / `font-serif` / `font-sans` |
+| Body | Gelasio (transitional serif) | `font-body` |
+| Labels / UI | Barlow Condensed | `font-label` |
+
+> Note: `font-serif` and `font-sans` both alias to Barlow Condensed for legacy class compatibility — use `font-headline` for new work. `font-body` is the only family that returns Gelasio.
 
 **Heading sizes (homepage reference):**
-- H1 hero: `text-6xl lg:text-8xl` — Newsreader, `leading-[1.1] tracking-tight`
-- H2 section: `text-5xl` — Newsreader
-- H3 card: `text-3xl` — Newsreader, featured cards (col-span-2) use `text-4xl`
-- Label overline: `text-xs uppercase tracking-[0.3em] text-tertiary-fixed-dim` — Inter (amber, consistent across all pages)
+- H1 hero: `text-[clamp(2.75rem,8vw,6.5rem)]` — Barlow Condensed ExtraBold, `leading-[0.95] tracking-tight`
+- H2 section: `text-5xl` — Barlow Condensed
+- H3 card: `text-3xl` — Barlow Condensed, featured cards (col-span-2) use `text-4xl`
+- Label overline: `text-xs uppercase tracking-[0.3em] text-tertiary-fixed-dim` — Barlow Condensed (amber, consistent across all pages)
 
-**Body:** `text-xl` for lead paragraphs, `text-lg` for standard body, `text-sm` for captions.
+**Body:** `text-xl` for lead paragraphs (Gelasio), `text-lg` for standard body, `text-sm` for captions.
 
 **Material Symbols:** Used for icons throughout. Font variation: `'FILL' 0, 'wght' 300`.
 
