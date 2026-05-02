@@ -10,7 +10,7 @@ Source of truth: `src/pages/index.astro` (homepage overrides all other pages on 
 **Tagline:** *Il tuo diritto è la mia professione.*  
 **Specialization:** Diritto del lavoro, previdenza sociale, pubblico impiego  
 **Tone:** Authoritative, human, precise. Formal but approachable.  
-**Accent motif:** Amber/gold (`#f7bd48`) against deep navy (`#041627`)
+**Accent motif:** Antique gold (`#8a5e0a`) against deep navy (`#041627`)
 
 ---
 
@@ -31,7 +31,7 @@ All colors are defined as custom Tailwind tokens in `tailwind.config.cjs`.
 ### Accent (tertiary — amber/gold)
 | Token | Hex | Usage |
 |-------|-----|-------|
-| `tertiary-fixed-dim` | `#f7bd48` | **Primary accent.** Icons, dividers, underlines, CTA borders |
+| `tertiary-fixed-dim` | `#8a5e0a` | **Primary accent.** Antique gold — icons, dividers, underlines, CTA borders. AA-compliant on white (5.7:1) |
 | `tertiary-fixed` | `#ffdea6` | Lighter amber (selection highlight) |
 | `tertiary` | `#1e1300` | Very dark amber/brown (left border accent on quote blocks) |
 | `tertiary-container` | `#382600` | Dark amber container |
@@ -74,7 +74,7 @@ Loaded from Google Fonts in `src/layouts/Layout.astro`. All `font-*` Tailwind fa
 > Note: `font-serif` and `font-sans` both alias to Barlow Condensed for legacy class compatibility — use `font-headline` for new work. `font-body` is the only family that returns Gelasio.
 
 **Heading sizes (homepage reference):**
-- H1 hero: `text-[clamp(2.75rem,8vw,6.5rem)]` — Barlow Condensed ExtraBold, `leading-[0.95] tracking-tight`
+- H1 hero: `text-[clamp(2.75rem,8vw,4.2rem)]` — Barlow Condensed ExtraBold, `leading-[0.95] tracking-tight`
 - H2 section: `text-5xl` — Barlow Condensed
 - H3 card: `text-3xl` — Barlow Condensed, featured cards (col-span-2) use `text-4xl`
 - Label overline: `text-xs uppercase tracking-[0.3em] text-tertiary-fixed-dim` — Barlow Condensed (amber, consistent across all pages)

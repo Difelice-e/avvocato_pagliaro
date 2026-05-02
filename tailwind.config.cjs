@@ -29,7 +29,7 @@ module.exports = {
         'primary-fixed': '#d2e4fb',
         'surface-bright': '#fbf9fa',
         'inverse-surface': '#303032',
-        'tertiary-fixed-dim': '#f7bd48',
+        'tertiary-fixed-dim': '#8a5e0a',
         'on-primary-fixed-variant': '#38485a',
         'outline-variant': '#c4c6cd',
         'tertiary-container': '#382600',
