@@ -1,5 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionTitle from '../components/SectionTitle.astro';
+import CTASection from '../components/CTASection.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 const jsonLd = JSON.stringify({
@@ -23,10 +26,9 @@ const jsonLd = JSON.stringify({
     <section class="max-w-7xl mx-auto px-8 mb-32">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
         <div class="lg:col-span-5 order-2 lg:order-1">
-          <span class="text-tertiary-fixed-dim font-label uppercase tracking-[0.25em] text-xs font-semibold mb-6 block">Da oltre vent&rsquo;anni nelle aule giuslavoristiche</span>
-          <h1 class="font-headline font-extrabold text-primary leading-[0.9] tracking-tight mb-8 text-[clamp(3rem,8vw,7rem)]">
+          <PageHero eyebrow="Da oltre vent&rsquo;anni nelle aule giuslavoristiche">
             Emanuele <br />Pagliaro
-          </h1>
+          </PageHero>
           <p class="text-on-surface-variant text-xl leading-relaxed font-body font-light mb-10 max-w-md">
             Specializzato in licenziamenti illegittimi, vertenze previdenziali e contenzioso pubblico impiego. Operativo in tutta Italia, sedi a Chieti e Roma.
           </p>
@@ -52,10 +54,9 @@ const jsonLd = JSON.stringify({
       <div class="max-w-7xl mx-auto px-8">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-24">
           <div>
-            <h2 class="text-4xl text-primary mb-12 font-headline flex items-center gap-4">
-              <span class="w-8 h-px bg-tertiary-fixed-dim"></span>
-              Percorso Professionale
-            </h2>
+            <span class="text-tertiary-fixed-dim font-label text-sm uppercase tracking-[0.3em] mb-6 block">La Sua Storia</span>
+            <h2 class="font-serif text-5xl text-primary mb-6">Percorso Professionale</h2>
+            <div class="h-1 w-24 bg-tertiary-fixed-dim mb-10"></div>
             <div class="space-y-8 text-on-surface-variant text-lg leading-loose font-body font-light">
               <p>
                 Avv. Emanuele Pagliaro ha iniziato la propria carriera con la convinzione che il diritto del lavoro sia lo strumento fondamentale per tutelare la dignità delle persone nel contesto lavorativo. Specializzato in controversie individuali e collettive, opera con rigore e attenzione alla persona.
@@ -84,10 +85,9 @@ const jsonLd = JSON.stringify({
     <!-- Team -->
     <section class="py-32 bg-surface">
       <div class="max-w-7xl mx-auto px-8">
-        <div class="mb-20 max-w-2xl">
-          <span class="text-tertiary-fixed-dim font-label tracking-[0.3em] uppercase text-xs mb-4 block">Professionisti al vostro fianco</span>
-          <h2 class="text-5xl text-primary font-headline">Il Team</h2>
-        </div>
+        <SectionTitle eyebrow="Professionisti al vostro fianco">
+          Il Team
+        </SectionTitle>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div class="group hover:bg-surface-container-low transition-colors duration-500 p-8">
             <div class="aspect-[3/4] bg-surface-container-high overflow-hidden mb-6">
@@ -127,7 +127,9 @@ const jsonLd = JSON.stringify({
     <section class="max-w-7xl mx-auto px-8 py-32">
       <div class="bg-primary text-white p-16 md:p-24">
         <div class="max-w-3xl">
-          <h2 class="text-5xl md:text-6xl font-headline mb-8 leading-tight">Vicini al cliente,<br />ovunque si trovi.</h2>
+          <span class="text-tertiary-fixed-dim font-label text-sm uppercase tracking-[0.3em] mb-6 block">Modalità Operative</span>
+          <h2 class="font-serif text-5xl text-on-primary mb-6 leading-tight">Vicini al cliente,<br />ovunque si trovi.</h2>
+          <div class="h-1 w-24 bg-tertiary-fixed-dim mb-8"></div>
           <p class="text-primary-fixed text-lg font-body font-light mb-12 leading-relaxed">
             Lo studio opera in presenza nelle sedi di Chieti e Roma, ma garantisce assistenza telefonica e in videochiamata su tutto il territorio nazionale. Per le cause in Corte di Cassazione, l&rsquo;avvocato opera a Roma.
           </p>
@@ -141,17 +143,14 @@ const jsonLd = JSON.stringify({
     </section>
 
     <!-- CTA -->
-    <section class="py-32 bg-white">
-      <div class="max-w-7xl mx-auto px-8">
-        <h2 class="text-5xl font-headline text-primary mb-8 max-w-2xl">Pronti ad ascoltarvi.</h2>
-        <p class="text-on-surface-variant mb-12 text-lg max-w-2xl">Contattate lo studio per fissare un primo appuntamento e discutere la vostra situazione.</p>
-        <a
-          href={`${base}/contatti`}
-          class="inline-block border-b-2 border-tertiary-fixed-dim pb-2 text-primary font-label uppercase tracking-[0.3em] font-bold text-sm hover:text-tertiary-fixed-dim transition-colors"
-        >
-          Richiedi una Consulenza
-        </a>
-      </div>
-    </section>
+    <CTASection
+      title="Pronti ad ascoltarvi."
+      description="Contattate lo studio per fissare un primo appuntamento e discutere la vostra situazione."
+      primaryHref={`${base}/contatti`}
+      primaryLabel="Richiedi una Consulenza"
+      secondaryHref="tel:+390871000000"
+      secondaryLabel="Chiamaci"
+      secondaryIsPhone={true}
+    />
   </main>
 </Layout>

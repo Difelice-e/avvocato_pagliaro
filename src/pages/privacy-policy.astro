@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
@@ -11,12 +12,10 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 >
   <main class="pt-32">
     <section class="max-w-7xl mx-auto px-8 mb-8">
-      <span class="text-on-tertiary-container font-label text-xs uppercase tracking-[0.3em] mb-6 block">Trasparenza e tutela</span>
-      <h1 class="font-headline text-5xl md:text-7xl text-primary tracking-tighter leading-none italic mb-8">
+      <PageHero eyebrow="Trasparenza e tutela" rule={true}>
         Privacy Policy
-      </h1>
-      <div class="h-1 w-24 bg-tertiary-fixed-dim mb-4"></div>
-      <p class="text-on-surface-variant text-sm font-sans">Ultimo aggiornamento: 30 marzo 2026</p>
+      </PageHero>
+      <p class="text-on-surface-variant text-sm font-sans mt-4">Ultimo aggiornamento: 30 marzo 2026</p>
     </section>
 
     <section class="max-w-3xl mx-auto px-8 pb-24">

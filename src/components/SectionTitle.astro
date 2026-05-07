@@ -1,0 +1,28 @@
+---
+interface Props {
+  eyebrow?: string;
+  description?: string;
+  rule?: boolean;
+  reveal?: boolean;
+  class?: string;
+}
+const {
+  eyebrow,
+  description,
+  rule = true,
+  reveal = true,
+  class: className = '',
+} = Astro.props;
+---
+<div class:list={[reveal && 'reveal', 'mb-20 max-w-2xl', className]}>
+  {eyebrow && (
+    <span class="text-tertiary-fixed-dim font-label text-sm uppercase tracking-[0.3em] mb-6 block">{eyebrow}</span>
+  )}
+  <h2 class="font-serif text-5xl text-primary mb-6">
+    <slot />
+  </h2>
+  {rule && <div class="h-1 w-24 bg-tertiary-fixed-dim"></div>}
+  {description && (
+    <p class="text-on-surface-variant font-body leading-relaxed mt-8">{description}</p>
+  )}
+</div>

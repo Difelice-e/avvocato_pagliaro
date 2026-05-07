@@ -1,5 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import CTASection from '../components/CTASection.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 const jsonLd = JSON.stringify({
@@ -22,20 +24,13 @@ const jsonLd = JSON.stringify({
   <main class="pt-32">
     <!-- Hero -->
     <section class="max-w-7xl mx-auto px-8 mb-28">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
-        <div class="lg:col-span-8">
-          <span class="text-tertiary-fixed-dim font-label text-xs uppercase tracking-[0.3em] mb-6 block">Il Nostro Rigore</span>
-          <h1 class="font-headline text-6xl md:text-8xl text-primary tracking-tighter leading-none mb-8">
-            Aree di <br /><span class="italic">Competenza</span>
-          </h1>
-          <div class="h-1 w-24 bg-tertiary-fixed-dim"></div>
-        </div>
-        <div class="lg:col-span-4 pb-4">
-          <p class="text-on-surface-variant text-lg leading-relaxed font-light">
-            Un approccio dedicato e specializzato alla tutela dei lavoratori. Ogni pratica è trattata con precisione giuridica e attenzione alla persona.
-          </p>
-        </div>
-      </div>
+      <PageHero
+        eyebrow="Il Nostro Rigore"
+        rule={true}
+        description="Un approccio dedicato e specializzato alla tutela dei lavoratori. Ogni pratica è trattata con precisione giuridica e attenzione alla persona."
+      >
+        Aree di <br /><span class="italic">Competenza</span>
+      </PageHero>
     </section>
 
     <!-- Bento Grid -->
@@ -99,8 +94,9 @@ const jsonLd = JSON.stringify({
     <section class="bg-primary py-32 text-on-primary overflow-hidden">
       <div class="max-w-7xl mx-auto px-8">
         <div class="mb-20 max-w-2xl">
-          <h2 class="font-headline text-5xl tracking-tight">Il Metodo</h2>
-          <div class="h-px w-16 bg-tertiary-fixed-dim mt-6 mb-8"></div>
+          <span class="text-tertiary-fixed-dim font-label text-sm uppercase tracking-[0.3em] mb-6 block">Il Nostro Approccio</span>
+          <h2 class="font-serif text-5xl text-on-primary mb-6 leading-tight">Il Metodo</h2>
+          <div class="h-1 w-24 bg-tertiary-fixed-dim mb-8"></div>
           <p class="text-on-primary-container font-light">
             Ogni vertenza segue tre fasi: ascolto, strategia, difesa. Il cliente è informato a ogni passaggio.
           </p>
@@ -138,17 +134,13 @@ const jsonLd = JSON.stringify({
     </section>
 
     <!-- CTA -->
-    <section class="py-40">
-      <div class="max-w-7xl mx-auto px-8">
-        <h2 class="font-headline text-5xl text-primary mb-8 tracking-tight max-w-2xl">Vuoi capire se hai un caso?</h2>
-        <p class="text-on-surface-variant text-lg mb-12 font-light max-w-2xl">
-          Prenotate una prima consultazione per discutere la vostra situazione con l&rsquo;Avv. Pagliaro.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-6">
-          <a href={`${base}/contatti`} class="bg-primary text-on-primary px-10 py-5 rounded-sm font-label text-sm uppercase tracking-widest hover:bg-primary-container transition-all">Contatta lo Studio</a>
-          <a href={`${base}/profilo`} class="border border-primary text-primary px-10 py-5 rounded-sm font-label text-sm uppercase tracking-widest hover:bg-surface-container-low transition-all">Chi Siamo</a>
-        </div>
-      </div>
-    </section>
+    <CTASection
+      title="Vuoi capire se hai un caso?"
+      description="Prenotate una prima consultazione per discutere la vostra situazione con l&rsquo;Avv. Pagliaro."
+      primaryHref={`${base}/contatti`}
+      primaryLabel="Contatta lo Studio"
+      secondaryHref={`${base}/profilo`}
+      secondaryLabel="Chi Siamo"
+    />
   </main>
 </Layout>

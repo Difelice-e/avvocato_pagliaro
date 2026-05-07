@@ -1,0 +1,27 @@
+---
+interface Props {
+  eyebrow: string;
+  description?: string;
+  rule?: boolean;
+  animate?: boolean;
+  class?: string;
+}
+const { eyebrow, description, rule = false, animate = true, class: className = '' } = Astro.props;
+const eyebrowClass = animate
+  ? 'hero-anim-1 text-tertiary-fixed-dim font-label text-sm uppercase tracking-[0.3em] mb-6 block'
+  : 'text-tertiary-fixed-dim font-label text-sm uppercase tracking-[0.3em] mb-6 block';
+const h1Class = animate
+  ? 'hero-anim-2 font-headline font-extrabold text-primary leading-[0.95] tracking-tight mb-8 text-[clamp(2.75rem,8vw,4.2rem)]'
+  : 'font-headline font-extrabold text-primary leading-[0.95] tracking-tight mb-8 text-[clamp(2.75rem,8vw,4.2rem)]';
+const descClass = animate
+  ? 'hero-anim-3 text-on-surface-variant text-lg leading-relaxed font-body font-light max-w-2xl mt-8'
+  : 'text-on-surface-variant text-lg leading-relaxed font-body font-light max-w-2xl mt-8';
+---
+<div class={className}>
+  <span class={eyebrowClass}>{eyebrow}</span>
+  <h1 class={h1Class}>
+    <slot />
+  </h1>
+  {rule && <div class="h-1 w-24 bg-tertiary-fixed-dim"></div>}
+  {description && <p class={descClass}>{description}</p>}
+</div>
