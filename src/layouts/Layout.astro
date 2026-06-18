@@ -1,6 +1,7 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import CookieBanner from '../components/CookieBanner.astro';
 
 interface Props {
   title: string;
@@ -21,6 +22,7 @@ const {
   jsonLd,
   currentPage = '',
 } = Astro.props;
+const geminiKey = import.meta.env.PUBLIC_GEMINI_KEY ?? '';
 ---
 
 <!doctype html>
@@ -54,6 +56,7 @@ const {
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="/chatbot.css" />
   </head>
   <body
     class="bg-background text-on-background font-body antialiased selection:bg-tertiary-fixed selection:text-on-tertiary-fixed"
@@ -61,6 +64,12 @@ const {
     <Header currentPage={currentPage} />
     <slot />
     <Footer />
+    <CookieBanner />
+    <script define:vars={{ geminiKey }}>
+      import('/chatbot.js').then(({ init }) => {
+        init({ apiKey: geminiKey });
+      });
+    </script>
   </body>
 </html>
 
