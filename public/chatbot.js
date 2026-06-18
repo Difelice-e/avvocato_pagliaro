@@ -4,6 +4,12 @@
 const GROQ_ENDPOINT = 'https://api.groq.com/openai/v1/chat/completions';
 const GROQ_MODEL = 'llama-3.3-70b-versatile';
 
+const WELCOME_MSG =
+  'Sono l\'assistente virtuale AI dello Studio Legale Pagliaro. ' +
+  'Ai sensi dell\'AI Act ti informo che stai interagendo con un sistema di intelligenza artificiale e non con un avvocato. ' +
+  'Posso fornirti informazioni generali su diritto del lavoro, previdenza sociale e pubblico impiego. ' +
+  'Come posso aiutarti?';
+
 const LAW_FIRM_CONTEXT = `
 Sei l'assistente virtuale dello Studio Legale Pagliaro. Rispondi esclusivamente in italiano, con tono professionale, formale e rassicurante. Non fornire mai pareri legali specifici su casi concreti: per questi, invita sempre il cliente a contattare lo studio per una consulenza.
 
@@ -44,6 +50,7 @@ const DEFAULTS = {
 let cfg = {};
 let state = { open: false, messages: [], waiting: false, pending: null, nextId: 0 };
 let els = {};
+let pendingEl = null;
 
 export function init(config) {
   cfg = { ...DEFAULTS, ...config };
@@ -111,6 +118,8 @@ function buildDOM() {
 
   els = { root, panel, messages, typing, form, input, sendBtn, toggle };
 
+  appendMessage('bot', WELCOME_MSG, false);
+
   closeBtn.addEventListener('click', () => setOpen(false));
   toggle.addEventListener('click', () => setOpen(!state.open));
   form.addEventListener('submit', e => { e.preventDefault(); send(); });
@@ -138,7 +147,7 @@ async function send() {
   } catch (err) {
     console.error('[chatbot]', err);
     setWaiting(false);
-    startTypewriter(cfg.errorMessage);
+    appendMessage('bot', cfg.errorMessage);
   }
 }
 
@@ -166,27 +175,39 @@ async function callGroq() {
 }
 
 function startTypewriter(full) {
-  state.pending = { full, shown: 0 };
-  tickTypewriter();
-}
-
-function tickTypewriter() {
-  if (!state.pending) return;
-  const { full, shown } = state.pending;
-
   const skipAnim =
     cfg.typingSpeedMs <= 0 ||
     window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
 
-  if (skipAnim || shown >= full.length) {
+  if (skipAnim) {
     appendMessage('bot', full);
-    state.pending = null;
-    renderPending(null);
     return;
   }
 
+  // Create element once — update textContent in-place each tick
+  pendingEl = mk('div', { 'data-n8n-chatbot': 'message', 'data-sender': 'bot', 'data-pending': 'true' });
+  els.messages.insertBefore(pendingEl, els.typing);
+  state.pending = { full, shown: 0 };
+  scrollToBottom();
+  setTimeout(tickTypewriter, cfg.typingSpeedMs);
+}
+
+function tickTypewriter() {
+  if (!state.pending || !pendingEl) return;
+  const { full, shown } = state.pending;
+
   state.pending.shown++;
-  renderPending(state.pending);
+  pendingEl.textContent = full.slice(0, state.pending.shown);
+  scrollToBottom();
+
+  if (state.pending.shown >= full.length) {
+    pendingEl.removeAttribute('data-pending');
+    state.messages.push({ id: state.nextId++, sender: 'bot', text: full });
+    state.pending = null;
+    pendingEl = null;
+    return;
+  }
+
   setTimeout(tickTypewriter, cfg.typingSpeedMs);
 }
 
@@ -197,17 +218,6 @@ function appendMessage(sender, text, scroll = true) {
   if (scroll) scrollToBottom();
 }
 
-function renderPending(pending) {
-  els.messages.querySelector('[data-pending="true"]')?.remove();
-  if (!pending) return;
-  const div = mk('div', {
-    'data-n8n-chatbot': 'message',
-    'data-sender': 'bot',
-    'data-pending': 'true',
-  }, pending.full.slice(0, pending.shown));
-  els.messages.insertBefore(div, els.typing);
-  scrollToBottom();
-}
 
 function setWaiting(val) {
   state.waiting = val;

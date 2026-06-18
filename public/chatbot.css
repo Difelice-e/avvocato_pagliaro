@@ -144,6 +144,10 @@
   border-bottom-left-radius: 2px;
 }
 
+[data-n8n-chatbot="message"][data-pending="true"] {
+  animation: none;
+}
+
 [data-n8n-chatbot="message"][data-pending="true"]::after {
   content: "";
   display: inline-block;
