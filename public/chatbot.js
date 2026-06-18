@@ -1,8 +1,8 @@
 // chatbot.js — Studio Legale Pagliaro widget
 // Zero dependencies. Call init({ apiKey }) to mount.
 
-const GEMINI_ENDPOINT =
-  'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent';
+const GROQ_ENDPOINT = 'https://api.groq.com/openai/v1/chat/completions';
+const GROQ_MODEL = 'llama-3.3-70b-versatile';
 
 const LAW_FIRM_CONTEXT = `
 Sei l'assistente virtuale dello Studio Legale Pagliaro. Rispondi esclusivamente in italiano, con tono professionale, formale e rassicurante. Non fornire mai pareri legali specifici su casi concreti: per questi, invita sempre il cliente a contattare lo studio per una consulenza.
@@ -132,7 +132,7 @@ async function send() {
   setWaiting(true);
 
   try {
-    const reply = await callGemini();
+    const reply = await callGroq();
     setWaiting(false);
     startTypewriter(reply);
   } catch (err) {
@@ -142,24 +142,27 @@ async function send() {
   }
 }
 
-async function callGemini() {
-  const contents = state.messages.slice(-10).map(m => ({
-    role: m.sender === 'user' ? 'user' : 'model',
-    parts: [{ text: m.text }],
-  }));
+async function callGroq() {
+  const messages = [
+    { role: 'system', content: LAW_FIRM_CONTEXT },
+    ...state.messages.slice(-10).map(m => ({
+      role: m.sender === 'user' ? 'user' : 'assistant',
+      content: m.text,
+    })),
+  ];
 
-  const res = await fetch(`${GEMINI_ENDPOINT}?key=${cfg.apiKey}`, {
+  const res = await fetch(GROQ_ENDPOINT, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      system_instruction: { parts: [{ text: LAW_FIRM_CONTEXT }] },
-      contents,
-    }),
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${cfg.apiKey}`,
+    },
+    body: JSON.stringify({ model: GROQ_MODEL, messages }),
   });
 
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   const data = await res.json();
-  return data.candidates[0].content.parts[0].text;
+  return data.choices[0].message.content;
 }
 
 function startTypewriter(full) {
