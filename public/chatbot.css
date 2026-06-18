@@ -11,7 +11,7 @@
   --n8n-chat-radius: 2px;
   --n8n-chat-radius-sm: 2px;
   --n8n-chat-shadow: 0 8px 32px rgba(4, 22, 39, 0.12);
-  --n8n-chat-z: 500;
+  --n8n-chat-z: 9050;
   --n8n-chat-font: 'Barlow Condensed', system-ui, sans-serif;
   --n8n-chat-accent: #ba880e;
 }

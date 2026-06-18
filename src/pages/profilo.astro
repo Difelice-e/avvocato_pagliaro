@@ -16,25 +16,26 @@ const jsonLd = JSON.stringify({
 ---
 
 <Layout
-  title="Profilo | Avv. Emanuele Pagliaro — Studio Legale Pagliaro"
-  description="Profilo professionale dell'Avv. Emanuele Pagliaro, avvocato specializzato in diritto del lavoro e previdenza sociale con sedi a Chieti e Roma."
+  title="I Professionisti | Studio Legale Pagliaro — Chieti e Roma"
+  description="Profili professionali dell'Avv. Emanuele Pagliaro e dell'Avv. Giangiacomo Pagliaro, specializzati in diritto del lavoro, previdenza sociale, diritto commerciale e responsabilità civile."
   canonical="https://www.avvocatopagliaro.it/profilo"
   jsonLd={jsonLd}
 >
   <main class="pt-32">
-    <!-- Hero -->
+
+    <!-- ── Hero Emanuele ── -->
     <section class="max-w-7xl mx-auto px-8 mb-32">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
         <div class="lg:col-span-5 order-2 lg:order-1">
-          <PageHero eyebrow="Da oltre vent&rsquo;anni nelle aule giuslavoristiche">
+          <PageHero eyebrow="Da oltre venticinque anni nelle aule giuslavoristiche">
             Emanuele <br />Pagliaro
           </PageHero>
           <p class="text-on-surface-variant text-xl leading-relaxed font-body font-light mb-10 max-w-md">
-            Specializzato in licenziamenti illegittimi, vertenze previdenziali e contenzioso pubblico impiego. Operativo in tutta Italia, sedi a Chieti e Roma.
+            Avvocato titolare dello Studio. Abilitato al patrocinio davanti alla Corte Suprema di Cassazione. Specializzato in licenziamenti, vertenze previdenziali e pubblico impiego.
           </p>
           <div class="flex items-center gap-6">
             <div class="h-px w-12 bg-outline-variant/30"></div>
-            <span class="italic text-primary font-headline text-lg">Il diritto del lavoro è uno strumento, non una poesia.</span>
+            <span class="italic text-primary font-headline text-lg">&ldquo;Il diritto del lavoro è uno strumento, non una poesia.&rdquo;</span>
           </div>
         </div>
         <div class="lg:col-span-7 order-1 lg:order-2 relative">
@@ -49,7 +50,7 @@ const jsonLd = JSON.stringify({
       </div>
     </section>
 
-    <!-- Biografia -->
+    <!-- ── Percorso Professionale Emanuele ── -->
     <section class="bg-surface-container-low py-32">
       <div class="max-w-7xl mx-auto px-8">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-24">
@@ -57,73 +58,152 @@ const jsonLd = JSON.stringify({
             <span class="text-tertiary-fixed-dim font-label text-sm uppercase tracking-[0.3em] mb-6 block">La Sua Storia</span>
             <h2 class="font-serif text-5xl text-primary mb-6">Percorso Professionale</h2>
             <div class="h-1 w-24 bg-tertiary-fixed-dim mb-10"></div>
-            <div class="space-y-8 text-on-surface-variant text-lg leading-loose font-body font-light">
+            <div class="space-y-6 text-on-surface-variant text-lg leading-loose font-body font-light">
               <p>
-                Avv. Emanuele Pagliaro ha iniziato la propria carriera con la convinzione che il diritto del lavoro sia lo strumento fondamentale per tutelare la dignità delle persone nel contesto lavorativo. Specializzato in controversie individuali e collettive, opera con rigore e attenzione alla persona.
+                Laureato in Giurisprudenza presso l&rsquo;Università degli Studi di Teramo nel 1995, con specializzazione in diritto sindacale, del lavoro e previdenza sociale. Durante il percorso accademico ha collaborato come assistente nella cattedra di Teoria Generale del Diritto.
               </p>
               <p>
-                Il suo approccio si distingue per la chiarezza nella comunicazione con il cliente, la precisione nell&rsquo;analisi giuridica e la capacità di individuare la strategia più efficace sia in sede giudiziale che stragiudiziale. Opera in tutto il territorio nazionale, con sedi operative a Chieti e Roma.
+                Iscritto all&rsquo;Albo degli Avvocati dal 1998 — prima a Pescara, poi a Chieti — ha costruito nel tempo una pratica centrata interamente sul diritto giuslavoristico. Nel 2010 è stato ammesso all&rsquo;Albo Speciale per il patrocinio davanti alla Corte Suprema di Cassazione, estendendo l&rsquo;operatività dello Studio a tutti i gradi di giudizio.
+              </p>
+              <p>
+                Tra i risultati più significativi della propria carriera, ha conseguito l&rsquo;immissione in ruolo di oltre 400 dipendenti precari nella pubblica amministrazione, affermandosi come punto di riferimento nelle vertenze di stabilizzazione del personale pubblico.
               </p>
             </div>
           </div>
-          <div class="flex flex-col justify-center space-y-12">
+          <div class="flex flex-col justify-start space-y-16">
+            <!-- Stats -->
             <div class="grid grid-cols-2 gap-8">
               <div>
-                <h4 class="text-primary font-headline text-5xl mb-2">20+</h4>
+                <h4 class="text-primary font-headline text-5xl mb-2">25+</h4>
                 <p class="text-outline text-xs uppercase tracking-widest">Anni di Attività</p>
               </div>
               <div>
-                <h4 class="text-primary font-headline text-5xl mb-2">2</h4>
-                <p class="text-outline text-xs uppercase tracking-widest">Sedi: Chieti &amp; Roma</p>
+                <h4 class="text-primary font-headline text-5xl mb-2">400+</h4>
+                <p class="text-outline text-xs uppercase tracking-widest">Dipendenti Stabilizzati</p>
               </div>
             </div>
+            <!-- Timeline credenziali -->
+            <div class="space-y-0">
+              <span class="text-tertiary-fixed-dim font-label text-xs uppercase tracking-[0.3em] mb-6 block">Tappe chiave</span>
+              {[
+                { year: '1995', label: 'Laurea in Giurisprudenza', detail: 'Università degli Studi di Teramo' },
+                { year: '1998', label: 'Iscrizione all\'Albo Avvocati', detail: 'Prima a Pescara, poi a Chieti' },
+                { year: '2010', label: 'Albo Speciale Cassazione', detail: 'Patrocinio davanti alla Corte Suprema' },
+              ].map((item) => (
+                <div class="flex gap-6 py-6 border-b border-outline-variant/20 last:border-0">
+                  <span class="font-headline text-3xl text-tertiary-fixed-dim w-16 shrink-0">{item.year}</span>
+                  <div>
+                    <p class="font-label text-sm uppercase tracking-widest text-primary">{item.label}</p>
+                    <p class="text-on-surface-variant text-sm mt-1">{item.detail}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Team -->
-    <section class="py-32 bg-surface">
+    <!-- ── Aree di Competenza Emanuele ── -->
+    <section class="py-32 max-w-7xl mx-auto px-8">
+      <SectionTitle eyebrow="Avv. Emanuele Pagliaro">
+        Aree di Specializzazione
+      </SectionTitle>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-outline-variant/20">
+        {[
+          { title: 'Diritto del Lavoro', body: 'Controversie individuali e collettive, licenziamenti illegittimi, demansionamento, pubblico e privato.' },
+          { title: 'Diritto Sindacale', body: 'Contrattazione collettiva, relazioni industriali, rappresentanza sindacale aziendale.' },
+          { title: 'Previdenza Sociale', body: 'Pensioni, indennità, ricongiunzioni contributive, controversie INPS e INAIL.' },
+          { title: 'Pubblico Impiego', body: 'Stabilizzazione precari, concorsi pubblici, sanzioni disciplinari, contratto di lavoro pubblico.' },
+          { title: 'Mobbing', body: 'Tutela da mobbing e straining nel settore pubblico e privato, risarcimento del danno.' },
+          { title: 'Corte di Cassazione', body: 'Patrocinio abilitato davanti alla Corte Suprema di Cassazione per tutti i gradi di giudizio.' },
+        ].map((item) => (
+          <div class="bg-surface p-8 group hover:bg-surface-container-low transition-colors duration-300">
+            <div class="h-0.5 w-8 bg-tertiary-fixed-dim mb-6"></div>
+            <h3 class="font-label text-sm uppercase tracking-widest text-primary mb-3">{item.title}</h3>
+            <p class="text-on-surface-variant text-sm leading-relaxed">{item.body}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- ── Divider ── -->
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="h-px bg-outline-variant/30"></div>
+    </div>
+
+    <!-- ── Hero Giangiacomo ── -->
+    <section class="max-w-7xl mx-auto px-8 py-32">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+        <div class="lg:col-span-7 order-1 relative">
+          <div class="aspect-[4/5] bg-surface-container-high overflow-hidden shadow-2xl">
+            <img
+              alt="Avv. Giangiacomo Pagliaro"
+              class="w-full h-full object-cover grayscale contrast-125"
+              src={`${base}/imgs/gia_pagliaro.jpg`}
+            />
+          </div>
+        </div>
+        <div class="lg:col-span-5 order-2 flex flex-col justify-center">
+          <span class="text-tertiary-fixed-dim font-label text-sm uppercase tracking-[0.3em] mb-6 block">Avvocato Collaboratore</span>
+          <h2 class="font-headline text-6xl lg:text-7xl font-bold text-primary leading-none mb-6">
+            Giangiacomo<br />Pagliaro
+          </h2>
+          <div class="h-1 w-24 bg-tertiary-fixed-dim mb-8"></div>
+          <p class="text-on-surface-variant text-xl leading-relaxed font-body font-light mb-8">
+            Iscritto all&rsquo;Albo degli Avvocati di Chieti. Affianca lo Studio con competenze in diritto commerciale, contrattualistica aziendale e responsabilità civile, ampliando il raggio d&rsquo;azione oltre il diritto del lavoro.
+          </p>
+          <ul class="space-y-3 border-t border-outline-variant/20 pt-8">
+            {[
+              'Diritto del Lavoro',
+              'Diritto Commerciale e Contrattualistica',
+              'Recupero Crediti',
+              'Responsabilità Civile',
+            ].map((area) => (
+              <li class="flex items-center gap-3 font-label text-xs uppercase tracking-widest text-on-surface-variant">
+                <span class="h-px w-6 bg-tertiary-fixed-dim shrink-0"></span>
+                {area}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Aree di Competenza Giangiacomo ── -->
+    <section class="bg-surface-container-low py-24">
       <div class="max-w-7xl mx-auto px-8">
-        <SectionTitle eyebrow="Professionisti al vostro fianco">
-          Il Team
-        </SectionTitle>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div class="group hover:bg-surface-container-low transition-colors duration-500 p-8">
-            <div class="aspect-[3/4] bg-surface-container-high overflow-hidden mb-6">
-              <img
-                alt="Avv. Emanuele Pagliaro"
-                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
-                src={`${base}/imgs/ema_pagliaro.jpg`}
-              />
+        <span class="text-tertiary-fixed-dim font-label text-xs uppercase tracking-[0.3em] mb-4 block">Avv. Giangiacomo Pagliaro</span>
+        <h3 class="font-serif text-3xl text-primary mb-12">Aree di Attività</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {[
+            {
+              title: 'Diritto del Lavoro',
+              body: 'Vertenze giuslavoristiche in ambito privato, con particolare attenzione al settore del commercio, turismo e terziario.',
+            },
+            {
+              title: 'Contrattualistica',
+              body: 'Redazione e negoziazione di contratti aziendali. Specializzazione nei settori del terziario, turismo e commercio.',
+            },
+            {
+              title: 'Recupero Crediti',
+              body: 'Gestione stragiudiziale e giudiziale della fase di riscossione crediti per imprese e professionisti.',
+            },
+            {
+              title: 'Responsabilità Civile',
+              body: 'Questioni risarcitorie, sinistri stradali e responsabilità da circolazione di veicoli.',
+            },
+          ].map((item) => (
+            <div class="border-t border-outline-variant/30 pt-6">
+              <h4 class="font-label text-xs uppercase tracking-widest text-primary mb-3">{item.title}</h4>
+              <p class="text-on-surface-variant text-sm leading-relaxed">{item.body}</p>
             </div>
-            <h3 class="text-2xl text-primary font-headline mb-1">Avv. Emanuele Pagliaro</h3>
-            <p class="text-tertiary-fixed-dim text-xs uppercase tracking-widest mb-4">Avvocato Titolare</p>
-            <p class="text-on-surface-variant text-sm leading-relaxed">Diritto del lavoro, previdenza sociale, pubblico impiego.</p>
-            <a href="mailto:info@avvocatopagliaro.it" class="inline-block mt-4 text-primary font-label text-xs uppercase tracking-widest border-b border-tertiary-fixed-dim pb-1">
-              info@avvocatopagliaro.it
-            </a>
-          </div>
-          <div class="group hover:bg-surface-container-low transition-colors duration-500 p-8">
-            <div class="aspect-[3/4] bg-surface-container-high overflow-hidden mb-6">
-              <img
-                alt="Avv. G. Pagliaro — Studio Legale Pagliaro"
-                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
-                src={`${base}/imgs/gia_pagliaro.jpg`}
-              />
-            </div>
-            <h3 class="text-2xl text-primary font-headline mb-1">Avv. G. Pagliaro</h3>
-            <p class="text-tertiary-fixed-dim text-xs uppercase tracking-widest mb-4">Avvocato Collaboratore</p>
-            <p class="text-on-surface-variant text-sm leading-relaxed">Diritto del lavoro, contenzioso civile e previdenza sociale.</p>
-            <a href="mailto:info@avvocatopagliaro.it" class="inline-block mt-4 text-primary font-label text-xs uppercase tracking-widest border-b border-tertiary-fixed-dim pb-1">
-              info@avvocatopagliaro.it
-            </a>
-          </div>
+          ))}
         </div>
       </div>
     </section>
 
-    <!-- Modalità Operative -->
+    <!-- ── Modalità Operative ── -->
     <section class="max-w-7xl mx-auto px-8 py-32">
       <div class="bg-primary text-white p-16 md:p-24">
         <div class="max-w-3xl">
@@ -142,13 +222,13 @@ const jsonLd = JSON.stringify({
       </div>
     </section>
 
-    <!-- CTA -->
+    <!-- ── CTA ── -->
     <CTASection
       title="Pronti ad ascoltarvi."
       description="Contattate lo studio per fissare un primo appuntamento e discutere la vostra situazione."
       primaryHref={`${base}/contatti`}
       primaryLabel="Richiedi una Consulenza"
-      secondaryHref="tel:+390871000000"
+      secondaryHref="tel:+390871066991"
       secondaryLabel="Chiamaci"
       secondaryIsPhone={true}
     />
